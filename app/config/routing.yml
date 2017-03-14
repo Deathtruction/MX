@@ -1,0 +1,29 @@
+app:
+    resource: "@OCUserBundle/Controller/"
+    type:     annotation
+
+login:
+    path: /login
+    defaults:
+        _controller: OCUserBundle:Security:login
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout
+
+logge:
+    path: /home
+    defaults:
+        _controller: OCUserBundle:Home:index
+
+inscription:
+    path: /inscription
+    defaults:
+        _controller: OCUserBundle:Auth:index
+
+profil:
+    path: /profil
+#    defaults:
+#        _controller: OCUserBundle:User:index
