@@ -2,76 +2,6 @@
 
 {% block inscription %}
 
-    {#<h1><strong>Fiche d'inscription</strong></h1>#}
-
-    {#<form action="{{ path('inscription') }}" method="post">#}
-    {#<label for="nom">Nom :</label>#}
-    {#<input type="text" name="nom"/>#}
-
-    {#<label for="prenom">Prénom :</label>#}
-    {#<input type="text" name="prenom"/><br>#}
-
-    {#<label for="dateNaissance">Date de Naissance :</label>#}
-    {#<input type="date" name="dateNaissance">#}
-
-    {#<label for="adresse">Adresse :</label>#}
-    {#<input type="text" name="adresse"><br>#}
-
-    {#<label for="cp">CP :</label>#}
-    {#<input type="text" name="cp">#}
-
-    {#<label for="ville">Ville :</label>#}
-    {#<input type="text" name="ville"><br>#}
-
-    {#<label for="telephone">Téléphone :</label>#}
-    {#<input type="text" name="telephone"><br>#}
-
-    {#<label for="pseudo">Pseudo :</label>#}
-    {#<input type="text" name="pseudo">#}
-
-    {#<label for="mdp">Mot de passe :</label>#}
-    {#<input type="password" name="mdp"><br>#}
-
-    {#<label for="mail">Mail :</label>#}
-    {#<input type="email" name="mail"><br>#}
-
-    {#<label for="club">Club :</label>#}
-    {#<input type="text" name="club">#}
-
-    {#<label for="licenceUfolep">Licence UFOLEP :</label>#}
-    {#<input type="text" name="licenceUfolep"><br>#}
-
-    {#<label for="casm">CASM :</label>#}
-    {#<input type="text" name="casm">#}
-
-    {#<label for="permisMoto">Permis Moto :</label>#}
-    {#<input type="text" name="permisMoto"><br>#}
-
-    {#<label for="numDossard">Numéro de dossard :</label>#}
-    {#<input type="text" name="numDossard"><br>#}
-
-    {#<input type="submit" value="Valider"/><br><br>#}
-    {#</form>#}
-
-    {#<h2><strong>Ajout Motocross</strong></h2>#}
-
-    {#<form action="{{ path('inscription') }}" method="post">#}
-    {#<label for="numCadre">Numéro Cadre :</label>#}
-    {#<input type="text" name="numCadre">#}
-
-    {#<label for="numMoteur">Numéro Moteur :</label>#}
-    {#<input type="text" name="numMoteur">#}
-
-    {#<label for="marque">Marque :</label>#}
-    {#<input type="text" name="marque"><br>#}
-
-    {#<label for="cylindre">Cylindré :</label>#}
-    {#<input type="text" name="cylindre"><br>#}
-
-    {#<input type="submit" value="Ajouter">#}
-    {#</form>#}
-
-
     <section class="container main-content">
         <div class="row">
             <div class="col-md-9">
@@ -161,40 +91,5 @@
             </aside><!-- End sidebar -->
         </div><!-- End row -->
     </section><!-- End container -->
-
-    <section style="alignment: center">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="page-content">
-                    <div class="boxedtitle page-title"><h2><strong>Ajout Moto</strong></h2></div>
-                    <div class="form-style form-style-4">
-                        <form action="{{ path('inscription') }}" method="post">
-                            <div class="form-inputs clearfix">
-                                <p>
-                                    <label>Numéro Cadre :<span>*</span></label>
-                                    <input type="text">
-                                </p>
-                                <p>
-                                    <label>Numéro Moteur :<span>*</span></label>
-                                    <input type="text">
-                                </p>
-                                <p>
-                                    <label>Marque :<span>*</span></label>
-                                    <input type="text">
-                                </p>
-                                <p>
-                                    <label>Cylindré :<span>*</span></label>
-                                    <input type="text">
-                                </p>
-                            </div>
-                            <p class="form-submit">
-                                <input type="submit" value="Valider" class="button color small login-submit submit">
-                            </p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 {% endblock %}

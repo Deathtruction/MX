@@ -19,15 +19,14 @@ class RegisterController extends Controller
      */
     public function load()
     {
-
         $user = new User;
         $user->setUsername('test');
         $user->setPassword('test');
         $user->setSalt('');
         $user->setRoles(array('ROLE_USER'));
+
         $em = $this->getDoctrine()->getManager();
         $em->persist($user);
-
         $em->flush();
 
     }
