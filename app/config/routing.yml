@@ -19,11 +19,12 @@ logge:
         _controller: OCUserBundle:Home:index
 
 inscription:
-    path: /inscription
+    path: /new
     defaults:
-        _controller: OCUserBundle:Auth:index
+        _controller: OCUserBundle:User:new
 
 profil:
     path: /profil
 #    defaults:
 #        _controller: OCUserBundle:User:index
+
