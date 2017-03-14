@@ -65,9 +65,9 @@ class User implements UserInterface
     private $prenom;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="dateNaissance", type="integer")
+     * @ORM\Column(name="dateNaissance", type="string")
      */
     private $dateNaissance;
 
@@ -79,9 +79,9 @@ class User implements UserInterface
     private $adresse;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="cp", type="integer")
+     * @ORM\Column(name="cp", type="string")
      */
     private $cp;
 
@@ -93,16 +93,16 @@ class User implements UserInterface
     private $ville;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="telephone", type="integer")
+     * @ORM\Column(name="telephone", type="string")
      */
     private $telephone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="mail", type="text")
+     * @ORM\Column(name="mail", type="string")
      */
     private $mail;
 
@@ -114,9 +114,9 @@ class User implements UserInterface
     private $club;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="licenceUfolep", type="integer")
+     * @ORM\Column(name="licenceUfolep", type="string")
      */
     private $licenceUfolep;
 
@@ -135,9 +135,9 @@ class User implements UserInterface
     private $permisMoto;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="numDossard", type="integer")
+     * @ORM\Column(name="numDossard", type="string")
      */
     private $numDossard;
 
@@ -298,7 +298,7 @@ class User implements UserInterface
     /**
      * Set dateNaissance
      *
-     * @param integer $dateNaissance
+     * @param string $dateNaissance
      *
      * @return User
      */
@@ -312,7 +312,7 @@ class User implements UserInterface
     /**
      * Get dateNaissance
      *
-     * @return int
+     * @return string
      */
     public function getDateNaissance()
     {
@@ -346,7 +346,7 @@ class User implements UserInterface
     /**
      * Set cp
      *
-     * @param integer $cp
+     * @param string $cp
      *
      * @return User
      */
@@ -360,7 +360,7 @@ class User implements UserInterface
     /**
      * Get cp
      *
-     * @return int
+     * @return string
      */
     public function getCp()
     {
@@ -394,7 +394,7 @@ class User implements UserInterface
     /**
      * Set telephone
      *
-     * @param integer $telephone
+     * @param string $telephone
      *
      * @return User
      */
@@ -408,7 +408,7 @@ class User implements UserInterface
     /**
      * Get telephone
      *
-     * @return int
+     * @return string
      */
     public function getTelephone()
     {
@@ -466,7 +466,7 @@ class User implements UserInterface
     /**
      * Set licenceUfolep
      *
-     * @param integer $licenceUfolep
+     * @param string $licenceUfolep
      *
      * @return User
      */
@@ -480,7 +480,7 @@ class User implements UserInterface
     /**
      * Get licenceUfolep
      *
-     * @return int
+     * @return string
      */
     public function getLicenceUfolep()
     {
@@ -538,7 +538,7 @@ class User implements UserInterface
     /**
      * Set numDossard
      *
-     * @param integer $numDossard
+     * @param string $numDossard
      *
      * @return User
      */
@@ -552,7 +552,7 @@ class User implements UserInterface
     /**
      * Get numDossard
      *
-     * @return int
+     * @return string
      */
     public function getNumDossard()
     {
