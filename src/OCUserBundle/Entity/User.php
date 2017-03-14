@@ -123,14 +123,14 @@ class User implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="casm", type="string", length=255)
+     * @ORM\Column(name="casm", type="string", length=255, nullable=true)
      */
     private $casm;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="permisMoto", type="string", length=255)
+     * @ORM\Column(name="permisMoto", type="string", length=255, nullable=true)
      */
     private $permisMoto;
 
