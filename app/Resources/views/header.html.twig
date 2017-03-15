@@ -13,9 +13,10 @@
                             <li><a href="{{ path('user_show', { 'id': app.user.id }) }}">Profil</a></li>
                         {% endif %}
 
-
-
+                        {% if is_granted('!IS_AUTHENTICATED_FULLY') %}
                         <li><a href="{{ path('inscription') }}">Nouveau Membre</a></li>
+                        {% endif %}
+
                         <li><a href="{{ path('logout') }}">Deconnexion</a></li>
                     </ul>
                 </li>
