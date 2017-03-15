@@ -3,6 +3,7 @@
 namespace OCUserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use OCUserBundle\OCUserBundle;
 
 /**
  * Moto
@@ -49,6 +50,11 @@ class Moto
      */
     private $cylindre;
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="OCUserBundle\Entity\User", fetch="EAGER")
+     */
+    private $user;
 
     /**
      * Get id
@@ -154,6 +160,22 @@ class Moto
     public function getCylindre()
     {
         return $this->cylindre;
+    }
+
+    /**
+     * @return \OCUserBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param \OCUserBundle\Entity\User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
     }
 }
 
