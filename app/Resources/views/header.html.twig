@@ -9,7 +9,7 @@
 
                 <li><a href="{{ path('login') }}">Connexion</a>
                     <ul>
-                        <li><a href="{{ path('profil') }}">Profil</a></li>
+                        <li><a href="{{ path('user_show', { 'id': user.id }) }}">Profil</a></li>
                         <li><a href="{{ path('inscription') }}">Nouveau Membre</a></li>
                         <li><a href="{{ path('logout') }}">Deconnexion</a></li>
                     </ul>

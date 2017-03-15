@@ -24,7 +24,7 @@ inscription:
         _controller: OCUserBundle:User:new
 
 profil:
-    path: /profil
-#    defaults:
-#        _controller: OCUserBundle:User:index
+    path: /user_show
+    defaults:
+        _controller: OCUserBundle:User:profil
 
