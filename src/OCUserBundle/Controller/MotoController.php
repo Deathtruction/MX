@@ -130,8 +130,7 @@ class MotoController extends Controller
     private function createDeleteForm(Moto $moto)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('moto_delete', array('
-            id' => $moto->getId())))
+            ->setAction($this->generateUrl('moto_delete', array('id' => $moto->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;
