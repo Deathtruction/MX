@@ -24,14 +24,14 @@ class Moto
     /**
      * @var string
      *
-     * @ORM\Column(name="numCadre", type="string", length=255)
+     * @ORM\Column(name="numCadre", type="string", length=255, unique=true)
      */
     private $numCadre;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="numMoteur", type="string", length=255)
+     * @ORM\Column(name="numMoteur", type="string", length=255, unique=true)
      */
     private $numMoteur;
 
