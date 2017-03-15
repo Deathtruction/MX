@@ -1,9 +1,10 @@
-<header id="header" style="height: 102px">
+<header id="header" style="height: 112px">
     <section class="container clearfix">
-        <div class="logo"><a href="{{ path('logge') }}"><img alt="" src="{{ asset('images/logo.jpg') }}"></a></div>
+        <div class="logo"><a href="{{ path('logge') }}"><img alt="" src="{{ asset('images/logo.png') }}"></a></div>
         <nav class="navigation">
             <ul>
                 <li class="current_page_item"><a href="{{ path('logge') }}">Accueil</a>
+
 
                 </li>
 
@@ -13,15 +14,17 @@
                             <li><a href="{{ path('user_show', { 'id': app.user.id }) }}">Profil</a></li>
                         {% endif %}
 
-                        {% if is_granted('!IS_AUTHENTICATED_FULLY') %}
-                        <li><a href="{{ path('inscription') }}">Nouveau Membre</a></li>
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') == false %}
+                            <li><a href="{{ path('inscription') }}">Nouveau Membre</a></li>
                         {% endif %}
 
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <li><a href="{{ path('logout') }}">Deconnexion</a></li>
+                            <li><a href="{{ path('logout') }}">Deconnexion</a></li>
                         {% endif %}
                     </ul>
                 </li>
+
+
                 <li><a href="right_sidebar.html">Compétition</a>
                     <ul>
                         <li><a href="login.html">Agenda</a></li>

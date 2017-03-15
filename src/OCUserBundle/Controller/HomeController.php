@@ -12,6 +12,6 @@ class HomeController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('base.html.twig');
+        return $this->render('::index.html.twig');
     }
 }
