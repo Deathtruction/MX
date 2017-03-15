@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Moto</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ moto.id }}</td>
+            </tr>
+            <tr>
+                <th>Numcadre</th>
+                <td>{{ moto.numCadre }}</td>
+            </tr>
+            <tr>
+                <th>Nummoteur</th>
+                <td>{{ moto.numMoteur }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ moto.marque }}</td>
+            </tr>
+            <tr>
+                <th>Cylindre</th>
+                <td>{{ moto.cylindre }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('moto_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('moto_edit', { 'id': moto.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
