@@ -9,7 +9,12 @@
 
                 <li><a href="{{ path('login') }}">Connexion</a>
                     <ul>
-                        <li><a href="{{ path('user_show', { 'id': user.id }) }}">Profil</a></li>
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <li><a href="{{ path('user_show', { 'id': app.user.id }) }}">Profil</a></li>
+                        {% endif %}
+
+
+
                         <li><a href="{{ path('inscription') }}">Nouveau Membre</a></li>
                         <li><a href="{{ path('logout') }}">Deconnexion</a></li>
                     </ul>
