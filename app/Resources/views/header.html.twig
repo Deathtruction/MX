@@ -17,7 +17,9 @@
                         <li><a href="{{ path('inscription') }}">Nouveau Membre</a></li>
                         {% endif %}
 
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                         <li><a href="{{ path('logout') }}">Deconnexion</a></li>
+                        {% endif %}
                     </ul>
                 </li>
                 <li><a href="right_sidebar.html">Compétition</a>
