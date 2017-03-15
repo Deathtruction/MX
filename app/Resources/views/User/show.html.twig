@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>User</h1>
+    <h1>Profil Membre</h1>
 
     <table>
         <tbody>
@@ -78,19 +78,23 @@
                 <td>{{ user.numDossard }}</td>
             </tr>
         </tbody>
-    </table>
+    </table><br>
 
     <ul>
+        {#<li>#}
+            {#<a href="{{ path('user_index') }}">Back to the list</a>#}
+        {#</li>#}
         <li>
-            <a href="{{ path('user_index') }}">Back to the list</a>
-        </li>
+            <a href="{{ path('user_edit', { 'id': user.id }) }}">Modifier profil</a>
+        </li><br>
         <li>
-            <a href="{{ path('user_edit', { 'id': user.id }) }}">Edit</a>
-        </li>
+            <a href="{{ path('moto_new') }}">Ajouter Moto</a>
+        </li><br>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer compte">
             {{ form_end(delete_form) }}
         </li>
+
     </ul>
 {% endblock %}
