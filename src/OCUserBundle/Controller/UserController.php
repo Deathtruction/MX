@@ -91,7 +91,9 @@ class UserController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('user_edit', array('id' => $user->getId()));
+            return $this->redirectToRoute('user_edit', array(
+                'id' => $user->getId()
+            ));
         }
 
         return $this->render('user/edit.html.twig', array(
@@ -115,7 +117,7 @@ class UserController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($user);
-            $em->flush($user);
+            $em->flush();
         }
 
         return $this->redirectToRoute('user_index');
@@ -131,7 +133,8 @@ class UserController extends Controller
     private function createDeleteForm(User $user)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('user_delete', array('id' => $user->getId())))
+            ->setAction($this->generateUrl('user_delete', array(
+                'id' => $user->getId())))
             ->setMethod('DELETE')
             ->getForm()
         ;
