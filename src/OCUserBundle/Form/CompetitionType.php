@@ -13,7 +13,17 @@ class CompetitionType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('date')->add('lieu')->add('departement')->add('club')->add('correspondants')->add('cylindreAccepter')->add('type')->add('dateLimiteInscription')->add('inscriptionOuverte')->add('nbParticipants')        ;
+        $builder
+            ->add('date')
+            ->add('lieu')
+            ->add('departement')
+            ->add('club')
+            ->add('correspondants')
+            ->add('cylindreAccepter')
+            ->add('type')
+            ->add('dateLimiteInscription')
+            ->add('inscriptionOuverte')
+            ->add('nbParticipants');
     }
     
     /**
