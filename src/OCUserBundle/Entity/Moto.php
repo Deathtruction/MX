@@ -3,7 +3,6 @@
 namespace OCUserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use OCUserBundle\OCUserBundle;
 
 /**
  * Moto
@@ -49,7 +48,6 @@ class Moto
      * @ORM\Column(name="cylindre", type="string", length=255)
      */
     private $cylindre;
-
 
     /**
      * @ORM\ManyToOne(targetEntity="OCUserBundle\Entity\User", fetch="EAGER")

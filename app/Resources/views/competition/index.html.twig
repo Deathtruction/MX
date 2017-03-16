@@ -38,7 +38,9 @@
                 <td>
                     <ul>
                         <li>
-                            <input type="button"  value="Inscription Course"><a href="{{ path('inscription') }}"></a></input>
+                            <form action="{{ path('inscrit_new', { 'id': competition.id }) }}">
+                                <input type="submit"  value="Inscription Course">
+                            </form>
                         </li>
                         {#<li>#}
                             {#<a href="{{ path('competition_show', { 'id': competition.id }) }}">Montrer</a>#}

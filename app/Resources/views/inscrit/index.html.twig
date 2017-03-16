@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des Inscrits</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for inscrit in inscrits %}
+            <tr>
+                <td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">Montrer</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('inscrit_edit', { 'id': inscrit.id }) }}">Mdifier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('inscrit_new') }}">Créer une nouvelle inscription</a>
+        </li>
+    </ul>
+{% endblock %}
