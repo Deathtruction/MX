@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Competitions list</h1>
+    <h1>Liste des Competitions</h1>
 
     <table>
         <thead>
@@ -17,7 +17,7 @@
                 <th>Datelimiteinscription</th>
                 <th>Inscriptionouverte</th>
                 <th>Nbparticipants</th>
-                <th>Actions</th>
+                {#<th>Actions</th>#}
             </tr>
         </thead>
         <tbody>
@@ -35,14 +35,14 @@
                 <td>{{ competition.inscriptionOuverte }}</td>
                 <td>{{ competition.nbParticipants }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('competition_show', { 'id': competition.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('competition_edit', { 'id': competition.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    {#<ul>#}
+                        {#<li>#}
+                            {#<a href="{{ path('competition_show', { 'id': competition.id }) }}">Montrer</a>#}
+                        {#</li>#}
+                        {#<li>#}
+                            {#<a href="{{ path('competition_edit', { 'id': competition.id }) }}">Modifier</a>#}
+                        {#</li>#}
+                    {#</ul>#}
                 </td>
             </tr>
         {% endfor %}
@@ -50,8 +50,8 @@
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('competition_new') }}">Create a new competition</a>
-        </li>
+        {#<li>#}
+            {#<a href="{{ path('competition_new') }}">Créer une nouvelle compétition</a>#}
+        {#</li>#}
     </ul>
 {% endblock %}
