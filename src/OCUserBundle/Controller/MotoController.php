@@ -40,6 +40,10 @@ class MotoController extends Controller
     public function newAction(Request $request)
     {
         $moto = new Moto();
+        $user = $this->container->get('security.token_storage')->getToken();
+        $id = $user->getUser();
+        $moto->setUser($id);
+
         $form = $this->createForm('OCUserBundle\Form\MotoType', $moto);
         $form->handleRequest($request);
 
