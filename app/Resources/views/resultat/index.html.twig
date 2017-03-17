@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Resultats list</h1>
+    <h1>Liste des résultats</h1>
 
     <table>
         <thead>
@@ -21,10 +21,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('resultat_show', { 'id': resultat.id }) }}">show</a>
+                            <a href="{{ path('resultat_show', { 'id': resultat.id }) }}">Montrer</a>
                         </li>
                         <li>
-                            <a href="{{ path('resultat_edit', { 'id': resultat.id }) }}">edit</a>
+                            <a href="{{ path('resultat_edit', { 'id': resultat.id }) }}">Modifier</a>
                         </li>
                     </ul>
                 </td>
@@ -35,7 +35,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('resultat_new') }}">Create a new resultat</a>
+            <a href="{{ path('resultat_new') }}">Créer un nouveau résultat</a>
         </li>
     </ul>
 {% endblock %}
