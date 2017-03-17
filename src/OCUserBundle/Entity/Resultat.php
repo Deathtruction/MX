@@ -35,6 +35,10 @@ class Resultat
      */
     private $point;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="OCUserBundle\Entity\User", fetch="EAGER")
+     */
+    private $users;
 
     /**
      * Get id
@@ -92,6 +96,22 @@ class Resultat
     public function getPoint()
     {
         return $this->point;
+    }
+
+    /**
+     * @return \OCUserBundle\Entity\User
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    /**
+     * @param \OCUserBundle\Entity\User $users
+     */
+    public function setUsers($users)
+    {
+        $this->users = $users;
     }
 }
 
