@@ -19,10 +19,7 @@ class InscritType extends AbstractType
         $builder
             ->add('moto', EntityType::class, array(
                 "class" => Moto::class,
-                "choice_label" => function($moto) {
-                    return $moto->get;
-                }
-
+                "choice_label" => 'numCadre',
             ));
     }
 
