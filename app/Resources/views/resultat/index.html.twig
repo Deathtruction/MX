@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des résultats</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Position</th>
+                <th>Point</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for resultat in resultats %}
+            <tr>
+                <td><a href="{{ path('resultat_show', { 'id': resultat.id }) }}">{{ resultat.id }}</a></td>
+                <td>{{ resultat.position }}</td>
+                <td>{{ resultat.point }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('resultat_show', { 'id': resultat.id }) }}">Montrer</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('resultat_edit', { 'id': resultat.id }) }}">Modifier</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('resultat_new') }}">Créer un nouveau résultat</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -6,8 +6,8 @@
     <table>
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ moto.id }}</td>
+                {#<th>Id</th>#}
+                {#<td>{{ moto.id }}</td>#}
             </tr>
             <tr>
                 <th>Numcadre</th>
@@ -26,7 +26,7 @@
                 <td>{{ moto.cylindre }}</td>
             </tr>
         </tbody>
-    </table>
+    </table><br>
 
     <ul>
         {#<li>#}
@@ -34,7 +34,7 @@
         {#</li>#}
         <li>
             <a href="{{ path('moto_edit', { 'id': moto.id }) }}">Modifier Moto</a>
-        </li>
+        </li><br>
         <li>
             {{ form_start(delete_form) }}
             <input type="submit" value="Supprimer">
