@@ -2,6 +2,7 @@
 
 namespace OCUserBundle\Controller;
 
+use OCUserBundle\Entity\Competition;
 use OCUserBundle\Entity\Inscrit;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -34,16 +35,18 @@ class InscritController extends Controller
     /**
      * Creates a new inscrit entity.
      *
-     * @Route("/new", name="inscrit_new")
+     * @Route("/new/{id}", name="inscrit_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request)
+    public function newAction(Request $request, Competition $competition)
     {
         $inscrit = new Inscrit();
+        $inscrit->setCompetition($competition);
         $form = $this->createForm('OCUserBundle\Form\InscritType', $inscrit);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            
             $em = $this->getDoctrine()->getManager();
             $em->persist($inscrit);
             $em->flush();
