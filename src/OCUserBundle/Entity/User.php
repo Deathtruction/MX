@@ -142,6 +142,7 @@ class User implements UserInterface
     private $numDossard;
 
 
+
     /**
      * Get id
      *
