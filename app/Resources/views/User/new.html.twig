@@ -1,18 +1,22 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div>
-    <h1>Créer Membre</h1>
-
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Créer" />
-    {{ form_end(form) }}
-
-    {#<ul>#}
-        {#<li>#}
-            {#<a href="{{ path('user_index') }}">Retour à la liste</a>#}
-        {#</li>#}
-    {#</ul>#}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="new-Membre">
+                <h1>Créer Membre</h1>
+                <div class="form-style form-style-4">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}<br>
+                    <input type="submit" value="Créer"/>
+                    {{ form_end(form) }}
+                </div>
+                {#<ul>#}
+                {#<li>#}
+                {#<a href="{{ path('user_index') }}">Retour à la liste</a>#}
+                {#</li>#}
+                {#</ul>#}
+            </div>
+        </div>
     </div>
 {% endblock %}
