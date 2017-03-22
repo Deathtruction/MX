@@ -2,60 +2,64 @@
 
 {% block body %}
     <h1>Liste des Competitions</h1>
+    <div class="row">
+        <div class="col-lg-12">
+            <table>
+                <thead>
+                <tr>
+                    {#<th>Id</th>#}
+                    <th>Date</th>
+                    <th>Lieu</th>
+                    <th>Departement</th>
+                    <th>Club</th>
+                    <th>Correspondants</th>
+                    <th>Cylindré Accepter</th>
+                    <th>Type</th>
+                    <th>Date Limite d'inscription</th>
+                    <th>Inscription Ouverte</th>
+                    <th>Nb Participants</th>
+                    {#<th>Inscription course</th>#}
+                    {#<th>Actions</th>#}
+                </tr>
+                </thead>
+                <tbody>
+                {% for competition in competitions %}
+                    <tr>
+                        {#<td><a href="{{ path('competition_show', { 'id': competition.id }) }}">{{ competition.id }}</a></td>#}
+                        <td>{{ competition.date }}</td>
+                        <td>{{ competition.lieu }}</td>
+                        <td>{{ competition.departement }}</td>
+                        <td>{{ competition.club }}</td>
+                        <td>{{ competition.correspondants }}</td>
+                        <td>{{ competition.cylindreAccepter }}</td>
+                        <td>{{ competition.type }}</td>
+                        <td>{{ competition.dateLimiteInscription }}</td>
+                        <td>{{ competition.inscriptionOuverte }}</td>
+                        <td>{{ competition.nbParticipants }}</td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('inscrit_new', { 'id': competition.id }) }}">S'incrire à la
+                                        compétition</a>
+                                </li>
+                                {#<li>#}
+                                {#<a href="{{ path('competition_show', { 'id': competition.id }) }}">Montrer</a>#}
+                                {#</li>#}
+                                {#<li>#}
+                                {#<a href="{{ path('competition_edit', { 'id': competition.id }) }}">Modifier</a>#}
+                                {#</li>#}
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
 
-    <table>
-        <thead>
-            <tr>
-                {#<th>Id</th>#}
-                <th>Date</th>
-                <th>Lieu</th>
-                <th>Departement</th>
-                <th>Club</th>
-                <th>Correspondants</th>
-                <th>Cylindreaccepter</th>
-                <th>Type</th>
-                <th>Datelimiteinscription</th>
-                <th>Inscriptionouverte</th>
-                <th>Nbparticipants</th>
-                {#<th>Inscription course</th>#}
-                {#<th>Actions</th>#}
-            </tr>
-        </thead>
-        <tbody>
-        {% for competition in competitions %}
-            <tr>
-                {#<td><a href="{{ path('competition_show', { 'id': competition.id }) }}">{{ competition.id }}</a></td>#}
-                <td>{{ competition.date }}</td>
-                <td>{{ competition.lieu }}</td>
-                <td>{{ competition.departement }}</td>
-                <td>{{ competition.club }}</td>
-                <td>{{ competition.correspondants }}</td>
-                <td>{{ competition.cylindreAccepter }}</td>
-                <td>{{ competition.type }}</td>
-                <td>{{ competition.dateLimiteInscription }}</td>
-                <td>{{ competition.inscriptionOuverte }}</td>
-                <td>{{ competition.nbParticipants }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('inscrit_new', { 'id': competition.id }) }}">S'incrire à la compétition</a>
-                        </li>
-                        {#<li>#}
-                            {#<a href="{{ path('competition_show', { 'id': competition.id }) }}">Montrer</a>#}
-                        {#</li>#}
-                        {#<li>#}
-                            {#<a href="{{ path('competition_edit', { 'id': competition.id }) }}">Modifier</a>#}
-                        {#</li>#}
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        {#<li>#}
-            {#<a href="{{ path('competition_new') }}">Créer une nouvelle compétition</a>#}
-        {#</li>#}
-    </ul>
+            <ul>
+                {#<li>#}
+                {#<a href="{{ path('competition_new') }}">Créer une nouvelle compétition</a>#}
+                {#</li>#}
+            </ul>
+        </div>
+    </div>
 {% endblock %}

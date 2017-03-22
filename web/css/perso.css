@@ -1,7 +1,7 @@
 table {
     font-family: Arial;
-    margin: 100px;
-    width: 500px;
+    margin: 80px;
+    width: auto;
     border-collapse: collapse;
 }
 
@@ -11,12 +11,13 @@ thead {
 }
 
 td {
-    border: 3px solid black;
+    border: 3px solid #DEDEDE;
+    width: 100px;
 }
 
 th {
     font-weight: bold;
-    border: 3px solid black;
+    border: 3px solid #DEDEDE;
 }
 
 .new-Membre {
@@ -31,12 +32,13 @@ th {
 
 }
 
-.profil {
-    padding: 10px;
-}
-
 .connexion {
     margin: 50px;
     padding: 20px;
     border: 3px solid #DEDEDE;
+}
+
+#image-febvre {
+    height: 100%;
+
 }
