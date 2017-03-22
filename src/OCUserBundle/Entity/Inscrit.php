@@ -32,6 +32,11 @@ class Inscrit
     private $moto;
 
     /**
+     * @ORM\ManyToOne(targetEntity="OCUserBundle\Entity\Categorie", fetch="EAGER")
+     */
+    private $categorie;
+
+    /**
      * Get id
      *
      * @return int
@@ -71,6 +76,22 @@ class Inscrit
     public function setMoto($moto)
     {
         $this->moto = $moto;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+
+    /**
+     * @param mixed $categorie
+     */
+    public function setCategorie($categorie)
+    {
+        $this->categorie = $categorie;
     }
 }
 
