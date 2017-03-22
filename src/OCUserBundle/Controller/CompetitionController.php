@@ -3,6 +3,7 @@
 namespace OCUserBundle\Controller;
 
 use OCUserBundle\Entity\Competition;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -33,6 +34,8 @@ class CompetitionController extends Controller
 
     /**
      * Creates a new competition entity.
+     *
+     * @Security("has_role('ROLE_GERANT')")
      *
      * @Route("/new", name="competition_new")
      * @Method({"GET", "POST"})
@@ -76,6 +79,8 @@ class CompetitionController extends Controller
     /**
      * Displays a form to edit an existing competition entity.
      *
+     * @Security("has_role('ROLE_GERANT')")
+     *
      * @Route("/{id}/edit", name="competition_edit")
      * @Method({"GET", "POST"})
      */
@@ -100,6 +105,8 @@ class CompetitionController extends Controller
 
     /**
      * Deletes a competition entity.
+     *
+     * @Security("has_role('ROLE_GERANT')")
      *
      * @Route("/{id}", name="competition_delete")
      * @Method("DELETE")

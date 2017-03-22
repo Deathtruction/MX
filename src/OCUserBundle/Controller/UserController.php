@@ -3,6 +3,7 @@
 namespace OCUserBundle\Controller;
 
 use OCUserBundle\Entity\User;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -17,6 +18,8 @@ class UserController extends Controller
 {
     /**
      * Lists all user entities.
+     *
+     * @Security("has_role('ROLE_USER')")
      *
      * @Route("/", name="user_index")
      * @Method("GET")
@@ -63,6 +66,8 @@ class UserController extends Controller
     /**
      * Finds and displays a user entity.
      *
+     * @Security("has_role('ROLE_USER')")
+     *
      * @Route("/{id}", name="user_show")
      * @Method("GET")
      */
@@ -78,6 +83,8 @@ class UserController extends Controller
 
     /**
      * Displays a form to edit an existing user entity.
+     *
+     * @Security("has_role('ROLE_USER')")
      *
      * @Route("/{id}/edit", name="user_edit")
      * @Method({"GET", "POST"})
@@ -105,6 +112,8 @@ class UserController extends Controller
 
     /**
      * Deletes a user entity.
+     *
+     * @Security("has_role('ROLE_ADMIN')")
      *
      * @Route("/{id}", name="user_delete")
      * @Method("DELETE")
@@ -141,6 +150,8 @@ class UserController extends Controller
     }
 
     /**
+     * @Security("has_role('IS_AUTHENTICATED_REMEMBERED')")
+     *
      * @Route("/profil")
      */
     public function profilAction()
