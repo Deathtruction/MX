@@ -1,16 +1,26 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Créer une Competition</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Créer" />
-    {{ form_end(form) }}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="new-Membre">
+                <h1>Créer une Competition</h1>
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <input type="submit" value="Créer"/>
+                {{ form_end(form) }}
 
-    {#<ul>#}
-        {#<li>#}
-            {#<a href="{{ path('competition_index') }}">Retour à la liste</a>#}
-        {#</li>#}
-    {#</ul>#}
+                {#<ul>#}
+                {#<li>#}
+                {#<a href="{{ path('competition_index') }}">Retour à la liste</a>#}
+                {#</li>#}
+                {#</ul>#}
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img src="{{ asset('images/mxdn-ernee-1.jpg') }}" alt="">
+        </div>
+    </div>
+
 {% endblock %}

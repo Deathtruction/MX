@@ -18,14 +18,15 @@ class InscritType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-////            ->add('moto', EntityType::class, array(
-////                "class" => Moto::class,
-////                "choice_label" => 'numCadre',
-////            ));
+            ->add('moto', EntityType::class, array(
+                "class" => Moto::class,
+                "choice_label" => 'numCadre',
+            ))
             ->add('categorie', EntityType::class, array(
                 "class" => Categorie::class,
                 "choice_label" => 'nom'
             ));
+
     }
 
     /**

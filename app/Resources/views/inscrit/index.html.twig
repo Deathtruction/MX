@@ -2,30 +2,42 @@
 
 {% block body %}
     <h1>Liste des Inscrits</h1>
+    <div class="row">
+        <div class="col-lg-8">
+            <table>
+                <thead>
+                <tr>
+                    {#<th>Id</th>#}
+                    <th>NumDossard</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Club</th>
+                    {#<th>Actions</th>#}
+                </tr>
+                </thead>
+                <tbody>
+                {% for inscrit in inscrits %}
+                    <tr>
+                        <td>{{ inscrit.user.numDossard }}</td>
+                        <td>{{ inscrit.user.nom }}</td>
+                        <td>{{ inscrit.user.prenom }}</td>
+                        <td>{{ inscrit.user.club }}</td>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for inscrit in inscrits %}
-            <tr>
-                <td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">Montrer</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('inscrit_edit', { 'id': inscrit.id }) }}">Mdifier</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                        <td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>
+                        <td>
+                            {#<ul>#}
+                            {#<li>#}
+                            {#<a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">Montrer</a>#}
+                            {#</li>#}
+                            {#<li>#}
+                            {#<a href="{{ path('inscrit_edit', { 'id': inscrit.id }) }}">Mdifier</a>#}
+                            {#</li>#}
+                            {#</ul>#}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}
