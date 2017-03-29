@@ -30,8 +30,9 @@
                         {% if is_granted('ROLE_GERANT') %}
                         <li><a href="{{ path('competition_new') }}">Ajouter Compétition</a></li>
                         {% endif %}
-
+                        {% if is_granted('ROLE_ADMIN') %}
                         <li><a href="{{ path('categorie_new') }}">Catégorie</a></li>
+                        {% endif %}
                         <li><a href="{{ path('competition_index') }}">Agenda</a></li>
                         <li><a href="{{ path('inscrit_index') }}">Liste des inscrits</a></li>
                         <li><a href="{{ path('resultat_index') }}">Résultats</a></li>
