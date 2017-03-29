@@ -1,20 +1,20 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Créer une inscription</h1>
+    <h1>Créer une Categorie</h1>
     <div class="row">
         <div class="col-md-2">
-            <div class="new-inscription">
+            <div class="new-categorie">
                 {{ form_start(form) }}
                 {{ form_widget(form) }}
                 <input type="submit" value="Créer"/>
                 {{ form_end(form) }}
 
-                {#<ul>#}
-                {#<li>#}
-                {#<a href="{{ path('inscrit_index') }}">Retour à la liste</a>#}
-                {#</li>#}
-                {#</ul>#}
+                <ul>
+                    <li>
+                        <a href="{{ path('categorie_index') }}">Retour à la liste</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

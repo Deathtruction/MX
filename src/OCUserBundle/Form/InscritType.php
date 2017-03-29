@@ -2,6 +2,7 @@
 
 namespace OCUserBundle\Form;
 
+use OCUserBundle\Entity\Categorie;
 use OCUserBundle\Entity\Moto;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -20,7 +21,12 @@ class InscritType extends AbstractType
             ->add('moto', EntityType::class, array(
                 "class" => Moto::class,
                 "choice_label" => 'numCadre',
+            ))
+            ->add('categorie', EntityType::class, array(
+                "class" => Categorie::class,
+                "choice_label" => 'nom'
             ));
+
     }
 
     /**

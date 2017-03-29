@@ -22,6 +22,11 @@ class Inscrit
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="OCUserBundle\Entity\User", fetch="EAGER")
+     */
+    private $user;
+
+    /**
      * @ORM\ManyToOne(targetEntity="OCUserBundle\Entity\Competition", fetch="EAGER")
      */
     private $competition;
@@ -32,6 +37,11 @@ class Inscrit
     private $moto;
 
     /**
+     * @ORM\ManyToOne(targetEntity="OCUserBundle\Entity\Categorie", fetch="EAGER")
+     */
+    private $categorie;
+
+    /**
      * Get id
      *
      * @return int
@@ -39,6 +49,22 @@ class Inscrit
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return \OCUserBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param \OCUserBundle\Entity\User $user
+     */
+    public function setUser($user)
+    {
+        $this->user = $user;
     }
 
     /**
@@ -71,6 +97,22 @@ class Inscrit
     public function setMoto($moto)
     {
         $this->moto = $moto;
+    }
+
+    /**
+     * @return \OCUserBundle\Entity\Categorie
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+
+    /**
+     * @param \OCUserBundle\Entity\Categorie $categorie
+     */
+    public function setCategorie($categorie)
+    {
+        $this->categorie = $categorie;
     }
 }
 
