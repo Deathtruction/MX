@@ -43,10 +43,7 @@ class ResultatController extends Controller
         $user = $this->container->get('security.token_storage')->getToken();
         $id = $user->getUser();
         $resultat->setUser($id);
-        $resultat->setUser($user);
-        $form = $this->createForm('OCUserBundle\Form\ResultatType', $resultat, array(
-            'user' => $this->getUser(),
-        ));
+        $form = $this->createForm('OCUserBundle\Form\ResultatType', $resultat);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
