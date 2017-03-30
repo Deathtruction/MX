@@ -51,7 +51,7 @@ class ResultatController extends Controller
             $em->persist($resultat);
             $em->flush();
 
-            return $this->redirectToRoute('resultat_show', array('id' => $resultat->getId()));
+            return $this->redirectToRoute('resultat_index', array('id' => $resultat->getId()));
         }
 
         return $this->render('resultat/new.html.twig', array(
