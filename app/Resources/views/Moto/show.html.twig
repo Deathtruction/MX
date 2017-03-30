@@ -10,11 +10,11 @@
                 {#<td>{{ moto.id }}</td>#}
             </tr>
             <tr>
-                <th>Numcadre</th>
+                <th>Numéro cadre</th>
                 <td>{{ moto.numCadre }}</td>
             </tr>
             <tr>
-                <th>Nummoteur</th>
+                <th>Numéro moteur</th>
                 <td>{{ moto.numMoteur }}</td>
             </tr>
             <tr>
@@ -29,6 +29,9 @@
     </table><br>
 
     <ul>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li><a href="{{ path('user_show', { 'id': app.user.id }) }}">Retour au Profil</a></li><br>
+        {% endif %}
         {#<li>#}
             {#<a href="{{ path('moto_index') }}">Retour à la liste</a>#}
         {#</li>#}

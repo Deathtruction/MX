@@ -65,7 +65,7 @@
                     <td>{{ user.club }}</td>
                 </tr>
                 <tr>
-                    <th>Licenceufolep</th>
+                    <th>Licence Ufolep</th>
                     <td>{{ user.licenceUfolep }}</td>
                 </tr>
                 <tr>
@@ -73,11 +73,11 @@
                     <td>{{ user.casm }}</td>
                 </tr>
                 <tr>
-                    <th>Permismoto</th>
+                    <th>Permis Moto</th>
                     <td>{{ user.permisMoto }}</td>
                 </tr>
                 <tr>
-                    <th>Numdossard</th>
+                    <th>Numéro Dossard</th>
                     <td>{{ user.numDossard }}</td>
                 </tr>
                 </tbody>
@@ -89,12 +89,13 @@
                 {#</li>#}
                 <li>
                     <a href="{{ path('user_edit', { 'id': user.id }) }}">Modifier profil</a>
-                </li>
-                <br>
+                </li><br>
+                <li>
+                    <a href="{{ path('moto_index') }}">Afficher la liste de mes motos</a>
+                </li><br>
                 <li>
                     <a href="{{ path('moto_new') }}">Ajouter Moto</a>
-                </li>
-                <br>
+                </li><br>
                 <li>
                     {{ form_start(delete_form) }}
                     <input type="submit" value="Supprimer compte">
