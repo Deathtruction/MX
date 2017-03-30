@@ -38,7 +38,7 @@ class Resultat
     /**
      * @ORM\ManyToOne(targetEntity="OCUserBundle\Entity\User", fetch="EAGER")
      */
-    private $users;
+    private $user;
 
     /**
      * Get id
@@ -101,17 +101,17 @@ class Resultat
     /**
      * @return \OCUserBundle\Entity\User
      */
-    public function getUsers()
+    public function getUser()
     {
-        return $this->users;
+        return $this->user;
     }
 
     /**
-     * @param \OCUserBundle\Entity\User $users
+     * @param \OCUserBundle\Entity\User $user
      */
-    public function setUsers($users)
+    public function setUser($user)
     {
-        $this->users = $users;
+        $this->user = $user;
     }
 }
 

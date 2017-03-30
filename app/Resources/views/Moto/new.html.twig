@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Ajouter une Moto</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Créer" />
-    {{ form_end(form) }}
-
-    <ul>
-        {#<li>#}
-            {#<a href="{{ path('moto_index') }}">Retour à la liste</a>#}
-        {#</li>#}
-    </ul>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="new-Moto">
+                <h1>Ajouter une Moto</h1>
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <input type="submit" value="Ajouter"/>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
 {% endblock %}

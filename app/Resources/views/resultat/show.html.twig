@@ -23,10 +23,10 @@
     <ul>
         <li>
             <a href="{{ path('resultat_index') }}">Retour à la liste</a>
-        </li>
+        </li><br>
         <li>
             <a href="{{ path('resultat_edit', { 'id': resultat.id }) }}">Modifier</a>
-        </li>
+        </li><br>
         <li>
             {{ form_start(delete_form) }}
                 <input type="submit" value="Supprimer">

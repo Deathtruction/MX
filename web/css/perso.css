@@ -20,7 +20,7 @@ th {
     border: 3px solid #DEDEDE;
 }
 
-.new-Membre {
+.new-user {
     cursor: auto;
     font-family: Arial;
     margin: 50px;
@@ -32,7 +32,7 @@ th {
 
 }
 
-.connexion {
+.connexion, .new-Moto, .new-resultat{
     margin: 50px;
     padding: 20px;
     border: 3px solid #DEDEDE;
@@ -43,12 +43,19 @@ th {
 
 }
 
-.new-inscription {
+.new-inscription, .new-categorie {
     font-family: Arial;
     padding: 20px;
 }
 
-.new-categorie {
-    font-family: Arial;
-    padding: 20px;
-}
+/*.new-categorie {*/
+    /*font-family: Arial;*/
+    /*padding: 20px;*/
+/*}*/
+
+/*.new-Moto {*/
+    /*font-family: Arial;*/
+    /*margin: 40px;*/
+    /*padding: 20px;*/
+    /*border: 3px solid #DEDEDE;*/
+/*}*/
