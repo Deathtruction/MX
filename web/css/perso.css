@@ -48,6 +48,13 @@ th {
     padding: 20px;
 }
 
+body {
+    background:url("/images/font2.jpg") no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+    margin:0;
+}
+
 .categorie {
     width: 150px;
     margin: 20px;
