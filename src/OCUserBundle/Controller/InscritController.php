@@ -24,7 +24,6 @@ class InscritController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $inscrits = $em->getRepository('OCUserBundle:Inscrit')->findAll();
 
         return $this->render('inscrit/index.html.twig', array(
@@ -41,6 +40,9 @@ class InscritController extends Controller
     public function newAction(Request $request, Competition $competition)
     {
         $inscrit = new Inscrit();
+        $user = $this->container->get('security.token_storage')->getToken();
+        $id = $user->getUser();
+        $inscrit->setUser($id);
         $inscrit->setCompetition($competition);
         $form = $this->createForm('OCUserBundle\Form\InscritType', $inscrit);
         $form->handleRequest($request);
@@ -72,7 +74,7 @@ class InscritController extends Controller
 
         return $this->render('inscrit/show.html.twig', array(
             'inscrit' => $inscrit,
-//            'user' => $user,
+            'user' => $inscrit->getUser(),
             'delete_form' => $deleteForm->createView(),
         ));
     }

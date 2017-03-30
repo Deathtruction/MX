@@ -23,8 +23,8 @@
                         <td>{{ inscrit.user.prenom }}</td>
                         <td>{{ inscrit.user.club }}</td>
 
-                        <td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>
-                        <td>
+                        {#<td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>#}
+                        {#<td>#}
                             {#<ul>#}
                             {#<li>#}
                             {#<a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">Montrer</a>#}
@@ -33,7 +33,7 @@
                             {#<a href="{{ path('inscrit_edit', { 'id': inscrit.id }) }}">Mdifier</a>#}
                             {#</li>#}
                             {#</ul>#}
-                        </td>
+                        {#</td>#}
                     </tr>
                 {% endfor %}
                 </tbody>
