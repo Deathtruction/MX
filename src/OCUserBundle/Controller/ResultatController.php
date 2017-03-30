@@ -40,13 +40,19 @@ class ResultatController extends Controller
     public function newAction(Request $request)
     {
         $resultat = new Resultat();
-        $form = $this->createForm('OCUserBundle\Form\ResultatType', $resultat);
+        $user = $this->container->get('security.token_storage')->getToken();
+        $id = $user->getUser();
+        $resultat->setUser($id);
+        $resultat->setUser($user);
+        $form = $this->createForm('OCUserBundle\Form\ResultatType', $resultat, array(
+            'user' => $this->getUser(),
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($resultat);
-            $em->flush($resultat);
+            $em->flush();
 
             return $this->redirectToRoute('resultat_show', array('id' => $resultat->getId()));
         }
@@ -112,7 +118,7 @@ class ResultatController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($resultat);
-            $em->flush($resultat);
+            $em->flush();
         }
 
         return $this->redirectToRoute('resultat_index');
