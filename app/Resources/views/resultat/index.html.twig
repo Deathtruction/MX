@@ -6,7 +6,7 @@
         <div class="col-lg-4">
             <table>
                 <thead>
-                <tr>
+                <tr style="background-color: white">
                     {#<th>Id</th>#}
                     <th>Position</th>
                     <th>Num Dossard</th>
@@ -18,7 +18,7 @@
                 </thead>
                 <tbody>
                 {% for resultat in resultats %}
-                    <tr>
+                    <tr style="background-color: white">
                         {#<td><a href="{{ path('resultat_show', { 'id': resultat.id }) }}">{{ resultat.id }}</a></td>#}
                         <td>{{ resultat.position }}</td>
                         <td>{{ resultat.user.numDossard }}</td>

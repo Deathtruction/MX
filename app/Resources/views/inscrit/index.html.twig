@@ -6,7 +6,7 @@
         <div class="col-lg-8">
             <table>
                 <thead>
-                <tr>
+                <tr style="background-color: white">
                     {#<th>Id</th>#}
                     <th>Num Dossard</th>
                     <th>Nom</th>
@@ -17,7 +17,7 @@
                 </thead>
                 <tbody>
                 {% for inscrit in inscrits %}
-                    <tr>
+                    <tr style="background-color: white">
                         {#<td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>#}
 
                         <td>{{ inscrit.user.numDossard }}</td>
