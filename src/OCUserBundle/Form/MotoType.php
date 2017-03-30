@@ -2,6 +2,9 @@
 
 namespace OCUserBundle\Form;
 
+use Doctrine\ORM\EntityRepository;
+use OCUserBundle\Entity\User;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,7 +20,16 @@ class MotoType extends AbstractType
             ->add('numCadre')
             ->add('numMoteur')
             ->add('marque')
-            ->add('cylindre');
+            ->add('cylindre')
+            ->add('user', EntityType::class, array(
+                "class" => User::class,
+                "query_builder" => function (EntityRepository $er) use ($options) {
+                    return $er ->createQueryBuilder('u')
+                    ->orderBy('u.id')
+                    ->where('u.user = :user')
+                        ->setParameter('user', $options['user']);
+                }
+            ));
     }
     
     /**

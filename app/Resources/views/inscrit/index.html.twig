@@ -8,7 +8,7 @@
                 <thead>
                 <tr>
                     {#<th>Id</th>#}
-                    <th>NumDossard</th>
+                    <th>Num Dossard</th>
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Club</th>
@@ -18,13 +18,13 @@
                 <tbody>
                 {% for inscrit in inscrits %}
                     <tr>
+                        {#<td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>#}
+
                         <td>{{ inscrit.user.numDossard }}</td>
                         <td>{{ inscrit.user.nom }}</td>
                         <td>{{ inscrit.user.prenom }}</td>
                         <td>{{ inscrit.user.club }}</td>
-
-                        <td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>
-                        <td>
+                        {#<td>#}
                             {#<ul>#}
                             {#<li>#}
                             {#<a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">Montrer</a>#}
@@ -33,7 +33,7 @@
                             {#<a href="{{ path('inscrit_edit', { 'id': inscrit.id }) }}">Mdifier</a>#}
                             {#</li>#}
                             {#</ul>#}
-                        </td>
+                        {#</td>#}
                     </tr>
                 {% endfor %}
                 </tbody>

@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Liste des Motos</h1>
+    <h1>Liste de mes motos</h1>
 
     <table>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Numcadre</th>
-                <th>Nummoteur</th>
+                {#<th>Id</th>#}
+                <th>Numéro cadre</th>
+                <th>Numéro moteur</th>
                 <th>Marque</th>
                 <th>Cylindre</th>
                 <th>Actions</th>
@@ -17,7 +17,7 @@
         <tbody>
         {% for moto in motos %}
             <tr>
-                <td><a href="{{ path('moto_show', { 'id': moto.id }) }}">{{ moto.id }}</a></td>
+                {#<td><a href="{{ path('moto_show', { 'id': moto.id }) }}">{{ moto.id }}</a></td>#}
                 <td>{{ moto.numCadre }}</td>
                 <td>{{ moto.numMoteur }}</td>
                 <td>{{ moto.marque }}</td>
@@ -40,6 +40,9 @@
     <ul>
         <li>
             <a href="{{ path('moto_new') }}">Ajouter une Moto</a>
-        </li>
+        </li><br>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li><a href="{{ path('user_show', { 'id': app.user.id }) }}">Retour au Profil</a></li>
+        {% endif %}
     </ul>
 {% endblock %}

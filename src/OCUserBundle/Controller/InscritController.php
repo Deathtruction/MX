@@ -42,7 +42,9 @@ class InscritController extends Controller
     {
         $inscrit = new Inscrit();
         $inscrit->setCompetition($competition);
-        $form = $this->createForm('OCUserBundle\Form\InscritType', $inscrit);
+        $form = $this->createForm('OCUserBundle\Form\InscritType', $inscrit, array(
+            'user' => $this->getUser(),
+        ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

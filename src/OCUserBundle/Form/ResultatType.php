@@ -13,7 +13,9 @@ class ResultatType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('position')->add('point')        ;
+        $builder
+            ->add('position')
+            ->add('point');
     }
     
     /**

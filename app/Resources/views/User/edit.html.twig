@@ -1,25 +1,32 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Modifier Membre</h1>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Valider la modification" />
-    {{ form_end(edit_form) }}<br>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="new-Membre">
+                <h1>Modifier Membre</h1>
 
-    <ul>
-        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            <li><a href="{{ path('user_show', { 'id': app.user.id }) }}">Retour au Profil</a></li>
-        {% endif %}
+                {{ form_start(edit_form) }}
+                {{ form_widget(edit_form) }}
+                <input type="submit" value="Valider la modification"/>
+                {{ form_end(edit_form) }}<br>
 
-        {#<li>#}
-            {#<a href="{{ path('user_index') }}">Retour à la liste</a>#}
-        {#</li>#}
-        {#<li>#}
-            {#{{ form_start(delete_form) }}#}
-                {#<input type="submit" value="Supprimer">#}
-            {#{{ form_end(delete_form) }}#}
-        {#</li>#}
-    </ul>
+                <ul>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <li><a href="{{ path('user_show', { 'id': app.user.id }) }}">Retour au Profil</a></li>
+                    {% endif %}
+
+                    {#<li>#}
+                    {#<a href="{{ path('user_index') }}">Retour à la liste</a>#}
+                    {#</li>#}
+                    {#<li>#}
+                    {#{{ form_start(delete_form) }}#}
+                    {#<input type="submit" value="Supprimer">#}
+                    {#{{ form_end(delete_form) }}#}
+                    {#</li>#}
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}
