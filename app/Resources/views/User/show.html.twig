@@ -3,108 +3,110 @@
 {% block body %}
 
     <div class="row">
-        <div class="col-lg-4" style="background-color: #1d1e22">
-            <h1>Profil Membre</h1>
+        <div class="col-lg-4">
+            <div style="background-color: #e6e6e6">
+                <h1 style="text-align: center">Profil Membre</h1>
+                <table style="background-color:white">
+                    <tbody>
+                    {#<tr>#}
+                    {#<th>Id</th>#}
+                    {#<td>{{ user.id }}</td>#}
+                    {#</tr>#}
+                    <tr>
+                        <th>Username</th>
+                        <td>{{ user.username }}</td>
+                    </tr>
+                    <tr>
+                        <th>Password</th>
+                        <td>{{ user.password }}</td>
+                    </tr>
+                    {#<tr>#}
+                    {#<th>Salt</th>#}
+                    {#<td>{{ user.salt }}</td>#}
+                    {#</tr>#}
+                    {#<tr>#}
+                    {#<th>Roles</th>#}
+                    {#<td>{% if user.roles %}{{ user.roles|join(', ') }}{% endif %}</td>#}
+                    {#</tr>#}
+                    <tr>
+                        <th>Nom</th>
+                        <td>{{ user.nom }}</td>
+                    </tr>
+                    <tr>
+                        <th>Prenom</th>
+                        <td>{{ user.prenom }}</td>
+                    </tr>
+                    <tr>
+                        <th>Date Naissance</th>
+                        <td>{{ user.dateNaissance }}</td>
+                    </tr>
+                    <tr>
+                        <th>Adresse</th>
+                        <td>{{ user.adresse }}</td>
+                    </tr>
+                    <tr>
+                        <th>Cp</th>
+                        <td>{{ user.cp }}</td>
+                    </tr>
+                    <tr>
+                        <th>Ville</th>
+                        <td>{{ user.ville }}</td>
+                    </tr>
+                    <tr>
+                        <th>Telephone</th>
+                        <td>{{ user.telephone }}</td>
+                    </tr>
+                    <tr>
+                        <th>Mail</th>
+                        <td>{{ user.mail }}</td>
+                    </tr>
+                    <tr>
+                        <th>Club</th>
+                        <td>{{ user.club }}</td>
+                    </tr>
+                    <tr>
+                        <th>Licence Ufolep</th>
+                        <td>{{ user.licenceUfolep }}</td>
+                    </tr>
+                    <tr>
+                        <th>Casm</th>
+                        <td>{{ user.casm }}</td>
+                    </tr>
+                    <tr>
+                        <th>Permis Moto</th>
+                        <td>{{ user.permisMoto }}</td>
+                    </tr>
+                    <tr>
+                        <th>Numéro Dossard</th>
+                        <td>{{ user.numDossard }}</td>
+                    </tr>
+                    </tbody>
+                </table>
 
-            <table style="background-color: white">
-                <tbody>
-                {#<tr>#}
-                {#<th>Id</th>#}
-                {#<td>{{ user.id }}</td>#}
-                {#</tr>#}
-                <tr>
-                    <th>Username</th>
-                    <td>{{ user.username }}</td>
-                </tr>
-                <tr>
-                    <th>Password</th>
-                    <td>{{ user.password }}</td>
-                </tr>
-                {#<tr>#}
-                {#<th>Salt</th>#}
-                {#<td>{{ user.salt }}</td>#}
-                {#</tr>#}
-                {#<tr>#}
-                {#<th>Roles</th>#}
-                {#<td>{% if user.roles %}{{ user.roles|join(', ') }}{% endif %}</td>#}
-                {#</tr>#}
-                <tr>
-                    <th>Nom</th>
-                    <td>{{ user.nom }}</td>
-                </tr>
-                <tr>
-                    <th>Prenom</th>
-                    <td>{{ user.prenom }}</td>
-                </tr>
-                <tr>
-                    <th>Date Naissance</th>
-                    <td>{{ user.dateNaissance }}</td>
-                </tr>
-                <tr>
-                    <th>Adresse</th>
-                    <td>{{ user.adresse }}</td>
-                </tr>
-                <tr>
-                    <th>Cp</th>
-                    <td>{{ user.cp }}</td>
-                </tr>
-                <tr>
-                    <th>Ville</th>
-                    <td>{{ user.ville }}</td>
-                </tr>
-                <tr>
-                    <th>Telephone</th>
-                    <td>{{ user.telephone }}</td>
-                </tr>
-                <tr>
-                    <th>Mail</th>
-                    <td>{{ user.mail }}</td>
-                </tr>
-                <tr>
-                    <th>Club</th>
-                    <td>{{ user.club }}</td>
-                </tr>
-                <tr>
-                    <th>Licence Ufolep</th>
-                    <td>{{ user.licenceUfolep }}</td>
-                </tr>
-                <tr>
-                    <th>Casm</th>
-                    <td>{{ user.casm }}</td>
-                </tr>
-                <tr>
-                    <th>Permis Moto</th>
-                    <td>{{ user.permisMoto }}</td>
-                </tr>
-                <tr>
-                    <th>Numéro Dossard</th>
-                    <td>{{ user.numDossard }}</td>
-                </tr>
-                </tbody>
-            </table>
-            <br>
-            <ul>
-                {#<li>#}
-                {#<a href="{{ path('user_index') }}">Retour à la liste</a>#}
-                {#</li>#}
-                <li>
-                    <a href="{{ path('user_edit', { 'id': user.id }) }}">Modifier profil</a>
-                </li><br>
-                <li>
-                    <a href="{{ path('moto_index') }}">Afficher la liste de mes motos</a>
-                </li><br>
-                <li>
-                    <a href="{{ path('moto_new') }}">Ajouter Moto</a>
-                </li><br>
-                <li>
-                    {{ form_start(delete_form) }}
-                    <input type="submit" value="Supprimer compte">
-                    {{ form_end(delete_form) }}
-                </li>
-            </ul>
-        </div>
-        <div id="image-febvre" class="col-lg-8">
-            <img src="{{ asset('images/Febvre-MXoN.jpg') }}" alt="Romain Febvre">
+                <br>
+                <ul>
+                    {#<li>#}
+                    {#<a href="{{ path('user_index') }}">Retour à la liste</a>#}
+                    {#</li>#}
+                    <li>
+                        <a href="{{ path('user_edit', { 'id': user.id }) }}">Modifier profil</a>
+                    </li>
+                    <br>
+                    <li>
+                        <a href="{{ path('moto_index') }}">Afficher la liste de mes motos</a>
+                    </li>
+                    <br>
+                    <li>
+                        <a href="{{ path('moto_new') }}">Ajouter Moto</a>
+                    </li>
+                    <br>
+                    <li>
+                        {{ form_start(delete_form) }}
+                        <input type="submit" value="Supprimer compte">
+                        {{ form_end(delete_form) }}
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 

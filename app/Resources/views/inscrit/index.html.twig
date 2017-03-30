@@ -1,10 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Liste des Inscrits</h1>
+
     <div class="row">
-        <div class="col-lg-8">
-            <table>
+        <div class="col-lg-8" style="background-color: #e6e6e6">
+            <h1 style="text-align: center">Liste des Inscrits</h1>
+            <table style="background-color: white">
                 <thead>
                 <tr style="background-color: white">
                     {#<th>Id</th>#}
@@ -17,7 +18,7 @@
                 </thead>
                 <tbody>
                 {% for inscrit in inscrits %}
-                    <tr style="background-color: white">
+                    <tr>
                         {#<td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>#}
 
                         <td>{{ inscrit.user.numDossard }}</td>

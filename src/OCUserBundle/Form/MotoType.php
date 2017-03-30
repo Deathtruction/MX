@@ -21,15 +21,7 @@ class MotoType extends AbstractType
             ->add('numMoteur')
             ->add('marque')
             ->add('cylindre')
-            ->add('user', EntityType::class, array(
-                "class" => User::class,
-                "query_builder" => function (EntityRepository $er) use ($options) {
-                    return $er ->createQueryBuilder('u')
-                    ->orderBy('u.id')
-                    ->where('u.user = :user')
-                        ->setParameter('user', $options['user']);
-                }
-            ));
+            ;
     }
     
     /**

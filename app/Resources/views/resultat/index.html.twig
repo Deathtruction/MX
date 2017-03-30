@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Liste des résultats</h1>
     <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-4" style="background-color: #e6e6e6">
+            <h1>Liste des résultats</h1>
             <table>
                 <thead>
                 <tr style="background-color: white">
@@ -18,7 +18,7 @@
                 </thead>
                 <tbody>
                 {% for resultat in resultats %}
-                    <tr style="background-color: white">
+                    <tr>
                         {#<td><a href="{{ path('resultat_show', { 'id': resultat.id }) }}">{{ resultat.id }}</a></td>#}
                         <td>{{ resultat.position }}</td>
                         <td>{{ resultat.user.numDossard }}</td>
