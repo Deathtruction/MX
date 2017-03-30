@@ -26,14 +26,14 @@
                         <td>{{ resultat.user.prenom }}</td>
                         <td>{{ resultat.point }}</td>
                         {#<td>#}
-                            {#<ul>#}
-                                {#<li>#}
-                                    {#<a href="{{ path('resultat_show', { 'id': resultat.id }) }}">Montrer</a>#}
-                                {#</li>#}
-                                {#<li>#}
-                                    {#<a href="{{ path('resultat_edit', { 'id': resultat.id }) }}">Modifier</a>#}
-                                {#</li>#}
-                            {#</ul>#}
+                        {#<ul>#}
+                        {#<li>#}
+                        {#<a href="{{ path('resultat_show', { 'id': resultat.id }) }}">Montrer</a>#}
+                        {#</li>#}
+                        {#<li>#}
+                        {#<a href="{{ path('resultat_edit', { 'id': resultat.id }) }}">Modifier</a>#}
+                        {#</li>#}
+                        {#</ul>#}
                         {#</td>#}
                     </tr>
                 {% endfor %}
@@ -41,9 +41,11 @@
             </table>
         </div>
     </div>
-    <ul>
-        <li>
-            <a href="{{ path('resultat_new') }}">Créer un nouveau résultat</a>
-        </li>
-    </ul>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <ul>
+            <li>
+                <a href="{{ path('resultat_new') }}">Créer un nouveau résultat</a>
+            </li>
+        </ul>
+    {% endif %}
 {% endblock %}
