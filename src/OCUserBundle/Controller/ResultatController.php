@@ -72,6 +72,7 @@ class ResultatController extends Controller
 
         return $this->render('resultat/show.html.twig', array(
             'resultat' => $resultat,
+            'user' => $resultat->getUser(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
