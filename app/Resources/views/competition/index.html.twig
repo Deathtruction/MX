@@ -36,20 +36,22 @@
                         <td>{{ competition.dateLimiteInscription }}</td>
                         <td>{{ competition.inscriptionOuverte }}</td>
                         <td>{{ competition.nbParticipants }}</td>
-                        <td>
-                            <ul>
-                                <li>
-                                    <a href="{{ path('inscrit_new', { 'id': competition.id }) }}">S'incrire à la
-                                        compétition</a>
-                                </li>
-                                {#<li>#}
-                                {#<a href="{{ path('competition_show', { 'id': competition.id }) }}">Montrer</a>#}
-                                {#</li>#}
-                                {#<li>#}
-                                {#<a href="{{ path('competition_edit', { 'id': competition.id }) }}">Modifier</a>#}
-                                {#</li>#}
-                            </ul>
-                        </td>
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('inscrit_new', { 'id': competition.id }) }}">S'incrire à la
+                                            compétition</a>
+                                    </li>
+                                    {#<li>#}
+                                    {#<a href="{{ path('competition_show', { 'id': competition.id }) }}">Montrer</a>#}
+                                    {#</li>#}
+                                    {#<li>#}
+                                    {#<a href="{{ path('competition_edit', { 'id': competition.id }) }}">Modifier</a>#}
+                                    {#</li>#}
+                                </ul>
+                            </td>
+                        {% endif %}
                     </tr>
                 {% endfor %}
                 </tbody>
