@@ -46,12 +46,14 @@
                                         <a href="{{ path('inscrit_new', { 'id': competition.id }) }}">S'incrire à la
                                             compétition</a>
                                     </li>
-                                    {#<li>#}
-                                    {#<a href="{{ path('competition_show', { 'id': competition.id }) }}">Montrer</a>#}
-                                    {#</li>#}
-                                    {#<li>#}
-                                    {#<a href="{{ path('competition_edit', { 'id': competition.id }) }}">Modifier</a>#}
-                                    {#</li>#}
+                                    {% if is_granted('ROLE_GERANT') %}
+                                    <li>
+                                    <a href="{{ path('competition_show', { 'id': competition.id }) }}">Montrer</a>
+                                    </li>
+                                    <li>
+                                    <a href="{{ path('competition_edit', { 'id': competition.id }) }}">Modifier</a>
+                                    </li>
+                                    {% endif %}
                                 </ul>
                             </td>
                         {% endif %}
