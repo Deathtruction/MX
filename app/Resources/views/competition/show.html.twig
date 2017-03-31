@@ -13,7 +13,7 @@
             </tr>
             <tr>
                 <th>Date</th>
-                <td>{{ competition.date | date(d.M.y) }}</td>
+                <td>{{ competition.date | date('d-M-y') }}</td>
             </tr>
             <tr>
                 <th>Lieu</th>
@@ -41,7 +41,7 @@
             </tr>
             <tr>
                 <th>Date limite d'inscription</th>
-                <td>{{ competition.dateLimiteInscription }}</td>
+                <td>{{ competition.dateLimiteInscription | date('d-M-y') }}</td>
             </tr>
             <tr>
                 <th>Inscription ouverte</th>

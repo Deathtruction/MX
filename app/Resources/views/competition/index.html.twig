@@ -29,14 +29,14 @@
                 {% for competition in competitions %}
                     <tr style="background-color: white">
                         {#<td><a href="{{ path('competition_show', { 'id': competition.id }) }}">{{ competition.id }}</a></td>#}
-                        <td>{{ competition.date | date(yyyy-MM-dd) }}</td>
+                        <td>{{ competition.date | date('d-M-y') }}</td>
                         <td>{{ competition.lieu }}</td>
                         <td>{{ competition.departement }}</td>
                         <td>{{ competition.club }}</td>
                         <td>{{ competition.correspondants }}</td>
                         <td>{{ competition.cylindreAccepter }}</td>
                         <td>{{ competition.type }}</td>
-                        <td>{{ competition.dateLimiteInscription  }}</td>
+                        <td>{{ competition.dateLimiteInscription | date('d-M-y') }}</td>
                         <td>{{ competition.inscriptionOuverte }}</td>
                         <td>{{ competition.nbParticipants }}</td>
                         {% if is_granted('IS_AUTHENTICATED_FULLY') %}

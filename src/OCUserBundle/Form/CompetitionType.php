@@ -18,11 +18,6 @@ class CompetitionType extends AbstractType
         $builder
             ->add('date', DateType::class, array(
                 'widget' => 'single_text',
-                'placeholder' => array(
-                    'year' => 'Year',
-                    'month' => 'Month',
-                    'day' => 'Day'
-                ),
             ))
             ->add('lieu')
             ->add('departement')
@@ -31,18 +26,13 @@ class CompetitionType extends AbstractType
             ->add('cylindreAccepter')
             ->add('type', ChoiceType::class, array(
                 'choices' => array(
-                    'Championnat' => 'type',
-                    'Entrainement officiel' => 'type',
-                    'Rencontre inter-club' => 'type'
+                    'Championnat' => 'Championnat',
+                    'Entrainement officiel' => 'Entrainement officiel',
+                    'Rencontre inter-club' => 'Rencontre inter-club'
                 )
             ))
             ->add('dateLimiteInscription', DateType::class, array(
                 'widget' => 'single_text',
-                'placeholder' => array(
-                    'year' => 'Year',
-                    'month' => 'Month',
-                    'day' => 'Day'
-                )
             ))
             ->add('inscriptionOuverte', ChoiceType::class, array(
                 'choices' => array(
@@ -52,7 +42,7 @@ class CompetitionType extends AbstractType
             ))
             ->add('nbParticipants');
     }
-    
+
     /**
      * {@inheritdoc}
      */
