@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="row">
-        <div style="background-color: #e6e6e6" class="col-md-3">
+<div class="row">
+    <div class="col-md-6">
+        <div class="new-user" style="background-color: #e6e6e6">
             <h1 class="titreG">Competition</h1>
 
             <table style="background-color: white">
@@ -56,11 +57,12 @@
 
             <ul>
                 <li>
-                    <a href="{{ path('competition_index') }}">Retour à la liste</a>
+                    <a href="{{ path('competition_edit', { 'id': competition.id }) }}" class="bouton-relief">Modifier</a>
                 </li>
+                <br>
                 <li>
-                    <a href="{{ path('competition_edit', { 'id': competition.id }) }}">Modifier</a>
-                </li>
+                    <a href="{{ path('competition_index') }}" class="bouton-relief">Retour à la liste</a><br><br>
+                </li
                 <li>
                     {{ form_start(delete_form) }}
                     <input type="submit" value="Supprimer">
@@ -68,5 +70,6 @@
                 </li>
             </ul>
         </div>
+    </div>
     </div>
 {% endblock %}
