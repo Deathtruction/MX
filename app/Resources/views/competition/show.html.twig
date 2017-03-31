@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="row">
+    <div style="background-color: #e6e6e6" class="col-md-3">
     <h1 class="titreG">Competition</h1>
 
-    <table>
+    <table style="background-color: white">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -65,4 +67,6 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+    </div>
+</div>
 {% endblock %}
