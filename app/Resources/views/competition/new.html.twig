@@ -12,8 +12,9 @@
                 {{ form_end(form) }}
 
                 <ul>
-                    <li>
-                        <a href="{{ path('competition_index') }}">Retour à la liste</a>
+                    <li><br>
+                    <li><a href="{{ path('user_show', { 'id': app.user.id }) }}" class="bouton-relief">Retour au
+                            Profil</a></li>
                     </li>
                 </ul>
             </div>

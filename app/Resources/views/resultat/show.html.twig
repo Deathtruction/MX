@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="row">
+    <div class="col-lg-2" style="background-color: #e6e6e6">
     <h1 class="titreG">Resultat</h1>
 
-    <table>
+    <table style="background-color: white">
         <tbody>
             {#<tr>#}
                 {#<th>Id</th>#}
@@ -34,15 +36,18 @@
 
     <ul>
         <li>
-            <a href="{{ path('resultat_index') }}">Retour à la liste</a>
+            <a href="{{ path('resultat_edit', { 'id': resultat.id }) }}" class="bouton-relief">Modifier</a>
         </li><br>
         <li>
-            <a href="{{ path('resultat_edit', { 'id': resultat.id }) }}">Modifier</a>
-        </li><br>
+            <a href="{{ path('resultat_index') }}" class="bouton-relief">Retour à la liste</a>
+        </li><br><br><br>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Supprimer">
+            <input type="submit" value="Supprimer">
             {{ form_end(delete_form) }}
         </li>
+        <br>
     </ul>
+    </div>
+</div>
 {% endblock %}

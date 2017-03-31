@@ -1,39 +1,46 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="titreG">Listes des Categories</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="new-categorie" style="background-color: #e6e6e6">
+                <h1 class="titreG">Listes des Categories</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for categorie in categories %}
-            <tr>
-                <td><a href="{{ path('categorie_show', { 'id': categorie.id }) }}">{{ categorie.id }}</a></td>
-                <td>{{ categorie.nom }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('categorie_show', { 'id': categorie.id }) }}">Montrer</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}">Modifier</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for categorie in categories %}
+                        <tr>
+                            <td><a href="{{ path('categorie_show', { 'id': categorie.id }) }}">{{ categorie.id }}</a>
+                            </td>
+                            <td>{{ categorie.nom }}</td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('categorie_show', { 'id': categorie.id }) }}">Montrer</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}">Modifier</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('categorie_new') }}">Créer une nouvelle categorie</a>
-        </li>
-    </ul>
+                <ul>
+                    <li>
+                        <a href="{{ path('categorie_new') }}">Créer une nouvelle categorie</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}

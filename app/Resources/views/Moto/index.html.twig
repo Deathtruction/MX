@@ -1,52 +1,58 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div style="background-color: #e6e6e6">
-        <h1 class="titreG">Liste de mes motos</h1>
-        <table>
-            <thead>
-            <tr>
-                {#<th>Id</th>#}
-                <th>Id</th>
-                <th>Numéro cadre</th>
-                <th>Numéro moteur</th>
-                <th>Marque</th>
-                <th>Cylindre</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for moto in motos %}
-            <tr>
-                {#<td><a href="{{ path('moto_show', { 'id': moto.id }) }}">{{ moto.id }}</a></td>#}
-                <td>{{ moto.user.id }}</td>
-                <td>{{ moto.numCadre }}</td>
-                <td>{{ moto.numMoteur }}</td>
-                <td>{{ moto.marque }}</td>
-                <td>{{ moto.cylindre }}</td>
-                <td>
-                    <ul>
-                        {#<li>#}
-                            {#<a href="{{ path('moto_show', { 'id': moto.id }) }}">Montrer</a>#}
-                        {#</li>#}
-                        <li>
-                            <a href="{{ path('moto_edit', { 'id': moto.id }) }}">Modifier</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="row">
+        <div class="col-md-6">
+            <div style="background-color: #e6e6e6" class="new-Moto">
+                <h1 class="titreG">Liste de mes motos</h1>
+                <table style="background-color: white">
+                    <thead>
+                    <tr>
+                        {#<th>Id</th>#}
+                        <th>Id</th>
+                        <th>Numéro cadre</th>
+                        <th>Numéro moteur</th>
+                        <th>Marque</th>
+                        <th>Cylindre</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for moto in motos %}
+                        <tr>
+                            {#<td><a href="{{ path('moto_show', { 'id': moto.id }) }}">{{ moto.id }}</a></td>#}
+                            <td>{{ moto.user.id }}</td>
+                            <td>{{ moto.numCadre }}</td>
+                            <td>{{ moto.numMoteur }}</td>
+                            <td>{{ moto.marque }}</td>
+                            <td>{{ moto.cylindre }}</td>
+                            <td>
+                                <ul>
+                                    {#<li>#}
+                                    {#<a href="{{ path('moto_show', { 'id': moto.id }) }}">Montrer</a>#}
+                                    {#</li>#}
+                                    <li>
+                                        <a href="{{ path('moto_edit', { 'id': moto.id }) }}">Modifier</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
 
-        <ul>
-            <li>
-                <a href="{{ path('moto_new') }}">Ajouter une Moto</a>
-            </li>
-            <br>
-            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                <li><a href="{{ path('user_show', { 'id': app.user.id }) }}">Retour au Profil</a></li>
-            {% endif %}
-        </ul>
+                <ul>
+                    <li>
+                        <a href="{{ path('moto_new') }}" class="bouton-relief">Ajouter une Moto</a>
+                    </li>
+                    <br>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <li><a href="{{ path('user_show', { 'id': app.user.id }) }}" class="bouton-relief">Retour au
+                                Profil</a></li>
+                    {% endif %}
+                </ul>
+                <br>
+            </div>
+        </div>
     </div>
 {% endblock %}

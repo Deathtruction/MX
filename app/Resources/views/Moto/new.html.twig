@@ -10,6 +10,11 @@
                 {{ form_widget(form) }}
                 <input type="submit" value="Ajouter"/>
                 {{ form_end(form) }}
+                <br>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <li><a href="{{ path('user_show', { 'id': app.user.id }) }}" class="bouton-relief">Retour au
+                            Profil</a></li>
+                {% endif %}
             </div>
         </div>
     </div>

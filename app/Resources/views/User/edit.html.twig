@@ -4,7 +4,7 @@
 
     <div class="row">
         <div class="col-md-3">
-            <div class="new-Membre" style="background-color: #e6e6e6">
+            <div class="new-user" style="background-color: #e6e6e6">
                 <h1 class="titreG">Modifier Membre</h1>
 
                 {{ form_start(edit_form) }}
@@ -14,9 +14,9 @@
 
                 <ul>
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <li><a href="{{ path('user_show', { 'id': app.user.id }) }}">Retour au Profil</a></li>
+                        <li><a href="{{ path('user_show', { 'id': app.user.id }) }}" class="bouton-relief">Retour au Profil</a></li>
                     {% endif %}
-
+                    <br>
                     {#<li>#}
                     {#<a href="{{ path('user_index') }}">Retour à la liste</a>#}
                     {#</li>#}
