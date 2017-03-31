@@ -7,6 +7,7 @@ use OCUserBundle\Entity\Inscrit;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
 /**
  * Inscrit controller.
@@ -54,6 +55,8 @@ class InscritController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($inscrit);
             $em->flush();
+
+
 
             return $this->redirectToRoute('inscrit_show', array('id' => $inscrit->getId()));
         }
