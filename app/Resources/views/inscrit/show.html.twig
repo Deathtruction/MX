@@ -1,48 +1,55 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="titreG">Inscrit</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="new-user" style="background-color: #e6e6e6">
+                <h1 class="titreG">Inscrit</h1>
 
-    <table>
-        <tbody>
-            {#<tr>#}
-            {#<th>Id</th>#}
-            {#<td>{{ inscrit.id }}</td>#}
-            {#</tr>#}
-            <tr>
-                <th>NumDossard</th>
-                <td>{{ user.numDossard }}</td>
-            </tr>
-            <tr>
-            <th>Nom</th>
-            <td>{{ user.nom }}</td>
-        </tr>
-        <tr>
-            <th>Prénom</th>
-            <td>{{ user.prenom }}</td>
-        </tr>
-        <tr>
-            <th>Club</th>
-            <td>{{ user.club }}</td>
-        </tr>
-        <tr>
-            <th>Catégorie</th>
-            <td>{{ categorie.nom }}</td>
-        </tr>
-        </tbody>
-    </table>
+                <table style="background-color: white">
+                    <tbody>
+                    {#<tr>#}
+                    {#<th>Id</th>#}
+                    {#<td>{{ inscrit.id }}</td>#}
+                    {#</tr>#}
+                    <tr>
+                        <th>NumDossard</th>
+                        <td>{{ user.numDossard }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nom</th>
+                        <td>{{ user.nom }}</td>
+                    </tr>
+                    <tr>
+                        <th>Prénom</th>
+                        <td>{{ user.prenom }}</td>
+                    </tr>
+                    <tr>
+                        <th>Club</th>
+                        <td>{{ user.club }}</td>
+                    </tr>
+                    <tr>
+                        <th>Catégorie</th>
+                        <td>{{ categorie.nom }}</td>
+                    </tr>
+                    </tbody>
+                </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('inscrit_index') }}">Retour à la liste</a>
-        </li>
-        <li>
-            <a href="{{ path('inscrit_edit', { 'id': inscrit.id }) }}">Modifier</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-            <input type="submit" value="Supprimer">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+                <ul>
+                    <li><a href="{{ path('user_show', { 'id': app.user.id }) }}" class="bouton-relief">Retour au
+                            Profil</a></li>
+                    <br>
+                    <li>
+                        <a href="{{ path('inscrit_edit', { 'id': inscrit.id }) }}" class="bouton-relief">Modifier</a>
+                    </li>
+                    <br><br>
+                    <li>
+                        {{ form_start(delete_form) }}
+                        <input type="submit" value="Supprimer">
+                        {{ form_end(delete_form) }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}

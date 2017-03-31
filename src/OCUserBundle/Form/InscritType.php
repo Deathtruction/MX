@@ -23,14 +23,13 @@ class InscritType extends AbstractType
                 "class" => Moto::class,
                 "choice_label" => "numCadre",
                 'query_builder' => function (EntityRepository $er) use ($options) {
-            return $er ->createQueryBuilder('m')
-                ->orderBy('m.numCadre', 'ASC')
-                ->where('m.user = :user')
-                ->setParameter('user', $options['user']);
+                    return $er->createQueryBuilder('m')
+                        ->orderBy('m.numCadre', 'ASC')
+                        ->where('m.user = :user')
+                        ->setParameter('user', $options['user']);
 
                 }
             ))
-
             ->add('categorie', EntityType::class, array(
                 "class" => Categorie::class,
                 "choice_label" => 'nom'

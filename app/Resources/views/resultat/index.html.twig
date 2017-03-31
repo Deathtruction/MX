@@ -2,54 +2,56 @@
 
 {% block body %}
     <div class="row">
-        <div class="col-lg-4" style="background-color: #e6e6e6">
-            <h1 class="titreG">Liste des résultats</h1>
-            <table style="background-color: white">
-                <thead>
-                <tr>
-                    {#<th>Id</th>#}
-                    <th>Position</th>
-                    <th>Numéro de Dossard</th>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>Nombre de points</th>
-                    {#<th>Actions</th>#}
-                </tr>
-                </thead>
-                <tbody>
-                {% for resultat in resultats %}
+        <div class="col-md-6">
+            <div style="background-color: #e6e6e6" class="new-Moto">
+                <h1 class="titreG">Liste des résultats</h1>
+                <table style="background-color: white">
+                    <thead>
                     <tr>
-                        {#<td><a href="{{ path('resultat_show', { 'id': resultat.id }) }}">{{ resultat.id }}</a></td>#}
-                        <td>{{ resultat.position }}</td>
-                        <td>{{ resultat.user.numDossard }}</td>
-                        <td>{{ resultat.user.nom }}</td>
-                        <td>{{ resultat.user.prenom }}</td>
-                        <td>{{ resultat.point }}</td>
-                        {% if is_granted('ROLE_GERANT') %}
-                            <td>
-                                <ul>
-                                    <li>
-                                        <a href="{{ path('resultat_show', { 'id': resultat.id }) }}">Montrer</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ path('resultat_edit', { 'id': resultat.id }) }}">Modifier</a>
-                                    </li>
-                                </ul>
-                            </td>
-                        {% endif %}
+                        {#<th>Id</th>#}
+                        <th>Position</th>
+                        <th>Numéro de Dossard</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Nombre de points</th>
+                        {#<th>Actions</th>#}
                     </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    {% for resultat in resultats %}
+                        <tr>
+                            {#<td><a href="{{ path('resultat_show', { 'id': resultat.id }) }}">{{ resultat.id }}</a></td>#}
+                            <td>{{ resultat.position }}</td>
+                            <td>{{ resultat.user.numDossard }}</td>
+                            <td>{{ resultat.user.nom }}</td>
+                            <td>{{ resultat.user.prenom }}</td>
+                            <td>{{ resultat.point }}</td>
+                            {% if is_granted('ROLE_GERANT') %}
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ path('resultat_show', { 'id': resultat.id }) }}">Montrer</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('resultat_edit', { 'id': resultat.id }) }}">Modifier</a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
 
-        {% if is_granted('ROLE_GERANT') %}
-            <ul>
-                <li>
-                    <a href="{{ path('resultat_new') }}" class="bouton-relief">Créer un nouveau résultat</a>
-                </li>
-            </ul>
-            <br>
-        {% endif %}
+                {% if is_granted('ROLE_GERANT') %}
+                    <ul>
+                        <li>
+                            <a href="{{ path('resultat_new') }}" class="bouton-relief">Créer un nouveau résultat</a>
+                        </li>
+                    </ul>
+                    <br>
+                {% endif %}
+            </div>
         </div>
     </div>
 {% endblock %}

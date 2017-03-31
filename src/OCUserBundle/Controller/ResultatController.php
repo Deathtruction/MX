@@ -5,7 +5,8 @@ namespace OCUserBundle\Controller;
 use OCUserBundle\Entity\Resultat;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Resultat controller.
@@ -134,7 +135,6 @@ class ResultatController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('resultat_delete', array('id' => $resultat->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }

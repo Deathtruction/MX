@@ -5,7 +5,8 @@ namespace OCUserBundle\Controller;
 use OCUserBundle\Entity\Categorie;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Categorie controller.
@@ -130,7 +131,6 @@ class CategorieController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('categorie_delete', array('id' => $categorie->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }

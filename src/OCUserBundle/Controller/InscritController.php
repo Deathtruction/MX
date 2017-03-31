@@ -6,7 +6,8 @@ use OCUserBundle\Entity\Competition;
 use OCUserBundle\Entity\Inscrit;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
 /**
@@ -51,14 +52,13 @@ class InscritController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($inscrit);
             $em->flush();
 
 
-
-            return $this->redirectToRoute('inscrit_show', array('id' => $inscrit->getId()));
+            return $this->redirectToRoute('inscrit_index', array('id' => $inscrit->getId()));
         }
 
         return $this->render('inscrit/new.html.twig', array(
@@ -142,7 +142,6 @@ class InscritController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('inscrit_delete', array('id' => $inscrit->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }

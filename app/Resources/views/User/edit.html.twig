@@ -14,7 +14,8 @@
 
                 <ul>
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <li><a href="{{ path('user_show', { 'id': app.user.id }) }}" class="bouton-relief">Retour au Profil</a></li>
+                        <li><a href="{{ path('user_show', { 'id': app.user.id }) }}" class="bouton-relief">Retour au
+                                Profil</a></li>
                     {% endif %}
                     <br>
                     {#<li>#}
