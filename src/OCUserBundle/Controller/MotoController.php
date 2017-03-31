@@ -46,7 +46,6 @@ class MotoController extends Controller
         $user = $this->container->get('security.token_storage')->getToken();
         $id = $user->getUser();
         $moto->setUser($id);
-
         $form = $this->createForm('OCUserBundle\Form\MotoType', $moto);
         $form->handleRequest($request);
 
@@ -76,6 +75,7 @@ class MotoController extends Controller
 
         return $this->render('moto/show.html.twig', array(
             'moto' => $moto,
+            'user' => $moto->getUser(),
             'delete_form' => $deleteForm->createView(),
         ));
     }

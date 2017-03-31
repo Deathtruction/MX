@@ -21,7 +21,16 @@ class MotoType extends AbstractType
             ->add('numMoteur')
             ->add('marque')
             ->add('cylindre')
-            ;
+//            ->add('user', EntityType::class, array(
+//                "class" => User::class,
+//                "query_builder" => function (EntityRepository $er) use ($options) {
+//                    return $er->createQueryBuilder('u')
+//                        ->orderBy('u.id')
+//                        ->where('u.user = :user')
+//                        ->setParameter('user', $options['user']);
+//
+//            }))
+        ;
     }
     
     /**
@@ -30,7 +39,8 @@ class MotoType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'OCUserBundle\Entity\Moto'
+            'data_class' => 'OCUserBundle\Entity\Moto',
+            'user' => null
         ));
     }
 
