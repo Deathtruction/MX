@@ -24,7 +24,7 @@ class Competition
     /**
      * @var string
      *
-     * @ORM\Column(name="date", type="string", length=255)
+     * @ORM\Column(name="date", type="date")
      */
     private $date;
 
@@ -38,7 +38,7 @@ class Competition
     /**
      * @var string
      *
-     * @ORM\Column(name="departement", type="string", length=255)
+     * @ORM\Column(name="departement", type="integer")
      */
     private $departement;
 
@@ -73,7 +73,7 @@ class Competition
     /**
      * @var string
      *
-     * @ORM\Column(name="dateLimiteInscription", type="string", length=255)
+     * @ORM\Column(name="dateLimiteInscription", type="date")
      */
     private $dateLimiteInscription;
 
@@ -87,7 +87,7 @@ class Competition
     /**
      * @var string
      *
-     * @ORM\Column(name="nbParticipants", type="string", length=255)
+     * @ORM\Column(name="nbParticipants", type="integer")
      */
     private $nbParticipants;
 

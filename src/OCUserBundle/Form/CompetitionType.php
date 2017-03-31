@@ -3,6 +3,8 @@
 namespace OCUserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -14,15 +16,30 @@ class CompetitionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('date')
+            ->add('date', DateType::class, array(
+                'widget' => 'single_text',
+            ))
             ->add('lieu')
             ->add('departement')
             ->add('club')
             ->add('correspondants')
             ->add('cylindreAccepter')
-            ->add('type')
-            ->add('dateLimiteInscription')
-            ->add('inscriptionOuverte')
+            ->add('type', ChoiceType::class, array(
+                'choices' => array(
+                    'Championnat' => 'Championnat',
+                    'Entrainement officiel' => 'Entrainement officiel',
+                    'Rencontre inter-club' => 'Rencontre inter-club'
+                )
+            ))
+            ->add('dateLimiteInscription', DateType::class, array(
+                'widget' => 'single_text',
+            ))
+            ->add('inscriptionOuverte', ChoiceType::class, array(
+                'choices' => array(
+                    'oui' => true,
+                    'non' => false
+                )
+            ))
             ->add('nbParticipants');
     }
 

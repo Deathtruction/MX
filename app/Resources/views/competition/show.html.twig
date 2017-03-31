@@ -6,54 +6,54 @@
         <div class="new-user" style="background-color: #e6e6e6">
             <h1 class="titreG">Competition</h1>
 
-            <table style="background-color: white">
-                <tbody>
-                <tr>
-                    <th>Id</th>
-                    <td>{{ competition.id }}</td>
-                </tr>
-                <tr>
-                    <th>Date</th>
-                    <td>{{ competition.date }}</td>
-                </tr>
-                <tr>
-                    <th>Lieu</th>
-                    <td>{{ competition.lieu }}</td>
-                </tr>
-                <tr>
-                    <th>Departement</th>
-                    <td>{{ competition.departement }}</td>
-                </tr>
-                <tr>
-                    <th>Club</th>
-                    <td>{{ competition.club }}</td>
-                </tr>
-                <tr>
-                    <th>Correspondants</th>
-                    <td>{{ competition.correspondants }}</td>
-                </tr>
-                <tr>
-                    <th>Cylindreaccepter</th>
-                    <td>{{ competition.cylindreAccepter }}</td>
-                </tr>
-                <tr>
-                    <th>Type</th>
-                    <td>{{ competition.type }}</td>
-                </tr>
-                <tr>
-                    <th>Datelimiteinscription</th>
-                    <td>{{ competition.dateLimiteInscription }}</td>
-                </tr>
-                <tr>
-                    <th>Inscriptionouverte</th>
-                    <td>{{ competition.inscriptionOuverte }}</td>
-                </tr>
-                <tr>
-                    <th>Nbparticipants</th>
-                    <td>{{ competition.nbParticipants }}</td>
-                </tr>
-                </tbody>
-            </table>
+    <table style="background-color: white">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ competition.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ competition.date | date('d-M-y') }}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ competition.lieu }}</td>
+            </tr>
+            <tr>
+                <th>Departement</th>
+                <td>{{ competition.departement }}</td>
+            </tr>
+            <tr>
+                <th>Club</th>
+                <td>{{ competition.club }}</td>
+            </tr>
+            <tr>
+                <th>Correspondants</th>
+                <td>{{ competition.correspondants }}</td>
+            </tr>
+            <tr>
+                <th>Cylindrée accepté</th>
+                <td>{{ competition.cylindreAccepter }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ competition.type }}</td>
+            </tr>
+            <tr>
+                <th>Date limite d'inscription</th>
+                <td>{{ competition.dateLimiteInscription | date('d-M-y') }}</td>
+            </tr>
+            <tr>
+                <th>Inscription ouverte</th>
+                <td>{{ competition.inscriptionOuverte }}</td>
+            </tr>
+            <tr>
+                <th>Nb participants</th>
+                <td>{{ competition.nbParticipants }}</td>
+            </tr>
+        </tbody>
+    </table>
 
             <ul>
                 <li>
