@@ -7,6 +7,7 @@
             <thead>
             <tr>
                 {#<th>Id</th>#}
+                <th>Id</th>
                 <th>Numéro cadre</th>
                 <th>Numéro moteur</th>
                 <th>Marque</th>
@@ -18,6 +19,7 @@
         {% for moto in motos %}
             <tr>
                 {#<td><a href="{{ path('moto_show', { 'id': moto.id }) }}">{{ moto.id }}</a></td>#}
+                <td>{{ moto.user.id }}</td>
                 <td>{{ moto.numCadre }}</td>
                 <td>{{ moto.numMoteur }}</td>
                 <td>{{ moto.marque }}</td>

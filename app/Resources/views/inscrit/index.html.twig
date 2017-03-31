@@ -13,6 +13,7 @@
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Club</th>
+                    <th>Catégorie</th>
                     {#<th>Actions</th>#}
                 </tr>
                 </thead>
@@ -25,6 +26,7 @@
                         <td>{{ inscrit.user.nom }}</td>
                         <td>{{ inscrit.user.prenom }}</td>
                         <td>{{ inscrit.user.club }}</td>
+                        <td>{{ inscrit.categorie.nom }}</td>
 
                         {#<td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>#}
                         {#<td>#}

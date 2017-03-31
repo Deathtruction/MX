@@ -6,25 +6,29 @@
     <table>
         <tbody>
             {#<tr>#}
-                {#<th>Id</th>#}
-                {#<td>{{ inscrit.id }}</td>#}
+            {#<th>Id</th>#}
+            {#<td>{{ inscrit.id }}</td>#}
             {#</tr>#}
             <tr>
                 <th>NumDossard</th>
                 <td>{{ user.numDossard }}</td>
             </tr>
             <tr>
-                <th>Nom</th>
-                <td>{{ user.nom }}</td>
-            </tr>
-            <tr>
-                <th>Prénom</th>
-                <td>{{ user.prenom }}</td>
-            </tr>
-            <tr>
-                <th>Club</th>
-                <td>{{ user.club }}</td>
-            </tr>
+            <th>Nom</th>
+            <td>{{ user.nom }}</td>
+        </tr>
+        <tr>
+            <th>Prénom</th>
+            <td>{{ user.prenom }}</td>
+        </tr>
+        <tr>
+            <th>Club</th>
+            <td>{{ user.club }}</td>
+        </tr>
+        <tr>
+            <th>Catégorie</th>
+            <td>{{ categorie.nom }}</td>
+        </tr>
         </tbody>
     </table>
 

@@ -77,6 +77,7 @@ class InscritController extends Controller
         return $this->render('inscrit/show.html.twig', array(
             'inscrit' => $inscrit,
             'user' => $inscrit->getUser(),
+            'categorie' => $inscrit->getCategorie(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
