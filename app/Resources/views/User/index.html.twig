@@ -1,72 +1,77 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="titreG">Liste des Membres</h1>
+    <div class="row">
+        <div class="col-lg-4">
+            <div style="background-color: #e6e6e6" class="new-user">
+                <h1 class="titreG">Liste des Membres</h1>
 
-            <table>
-                <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Username</th>
-                    <th>Password</th>
-                    <th>Salt</th>
-                    <th>Roles</th>
-                    <th>Nom</th>
-                    <th>Prenom</th>
-                    <th>Date Naissance</th>
-                    <th>Adresse</th>
-                    <th>Cp</th>
-                    <th>Ville</th>
-                    <th>Telephone</th>
-                    <th>Mail</th>
-                    <th>Club</th>
-                    <th>Licence Ufolep</th>
-                    <th>Casm</th>
-                    <th>Permis Moto</th>
-                    <th>Numéro Dossard</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for user in users %}
+                <table>
+                    <thead>
                     <tr>
-                        <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
-                        <td>{{ user.username }}</td>
-                        <td>{{ user.password }}</td>
-                        <td>{{ user.salt }}</td>
-                        <td>{% if user.roles %}{{ user.roles|join(', ') }}{% endif %}</td>
-                        <td>{{ user.nom }}</td>
-                        <td>{{ user.prenom }}</td>
-                        <td>{{ user.dateNaissance }}</td>
-                        <td>{{ user.adresse }}</td>
-                        <td>{{ user.cp }}</td>
-                        <td>{{ user.ville }}</td>
-                        <td>{{ user.telephone }}</td>
-                        <td>{{ user.mail }}</td>
-                        <td>{{ user.club }}</td>
-                        <td>{{ user.licenceUfolep }}</td>
-                        <td>{{ user.casm }}</td>
-                        <td>{{ user.permisMoto }}</td>
-                        <td>{{ user.numDossard }}</td>
-                        <td>
-                            <ul>
-                                <li>
-                                    <a href="{{ path('user_show', { 'id': user.id }) }}">Montrer</a>
-                                </li>
-                                <li>
-                                    <a href="{{ path('user_edit', { 'id': user.id }) }}">Modifier</a>
-                                </li>
-                            </ul>
-                        </td>
+                        <th>Id</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Salt</th>
+                        <th>Roles</th>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Date Naissance</th>
+                        <th>Adresse</th>
+                        <th>Cp</th>
+                        <th>Ville</th>
+                        <th>Telephone</th>
+                        <th>Mail</th>
+                        <th>Club</th>
+                        <th>Licence Ufolep</th>
+                        <th>Casm</th>
+                        <th>Permis Moto</th>
+                        <th>Numéro Dossard</th>
+                        <th>Actions</th>
                     </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.password }}</td>
+                            <td>{{ user.salt }}</td>
+                            <td>{% if user.roles %}{{ user.roles|join(', ') }}{% endif %}</td>
+                            <td>{{ user.nom }}</td>
+                            <td>{{ user.prenom }}</td>
+                            <td>{{ user.dateNaissance }}</td>
+                            <td>{{ user.adresse }}</td>
+                            <td>{{ user.cp }}</td>
+                            <td>{{ user.ville }}</td>
+                            <td>{{ user.telephone }}</td>
+                            <td>{{ user.mail }}</td>
+                            <td>{{ user.club }}</td>
+                            <td>{{ user.licenceUfolep }}</td>
+                            <td>{{ user.casm }}</td>
+                            <td>{{ user.permisMoto }}</td>
+                            <td>{{ user.numDossard }}</td>
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('user_show', { 'id': user.id }) }}">Montrer</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('user_edit', { 'id': user.id }) }}">Modifier</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
 
-            <ul>
-                <li>
-                    <a href="{{ path('user_new') }}">Créer nouveau Membre</a>
-                </li>
-            </ul>
-
+                <ul>
+                    <li>
+                        <a href="{{ path('user_new') }}">Créer nouveau Membre</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}

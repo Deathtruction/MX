@@ -9,10 +9,10 @@
                 <tr>
                     {#<th>Id</th>#}
                     <th>Position</th>
-                    <th>Num Dossard</th>
+                    <th>Numéro de Dossard</th>
                     <th>Nom</th>
                     <th>Prénom</th>
-                    <th>Point</th>
+                    <th>Nombre de points</th>
                     {#<th>Actions</th>#}
                 </tr>
                 </thead>
@@ -25,27 +25,31 @@
                         <td>{{ resultat.user.nom }}</td>
                         <td>{{ resultat.user.prenom }}</td>
                         <td>{{ resultat.point }}</td>
-                        {#<td>#}
-                        {#<ul>#}
-                        {#<li>#}
-                        {#<a href="{{ path('resultat_show', { 'id': resultat.id }) }}">Montrer</a>#}
-                        {#</li>#}
-                        {#<li>#}
-                        {#<a href="{{ path('resultat_edit', { 'id': resultat.id }) }}">Modifier</a>#}
-                        {#</li>#}
-                        {#</ul>#}
-                        {#</td>#}
+                        {% if is_granted('ROLE_GERANT') %}
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('resultat_show', { 'id': resultat.id }) }}">Montrer</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('resultat_edit', { 'id': resultat.id }) }}">Modifier</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        {% endif %}
                     </tr>
                 {% endfor %}
                 </tbody>
             </table>
+
+        {% if is_granted('ROLE_GERANT') %}
+            <ul>
+                <li>
+                    <a href="{{ path('resultat_new') }}" class="bouton-relief">Créer un nouveau résultat</a>
+                </li>
+            </ul>
+            <br>
+        {% endif %}
         </div>
     </div>
-    {% if is_granted('ROLE_GERANT') %}
-        <ul>
-            <li>
-                <a href="{{ path('resultat_new') }}">Créer un nouveau résultat</a>
-            </li>
-        </ul>
-    {% endif %}
 {% endblock %}

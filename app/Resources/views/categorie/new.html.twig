@@ -4,16 +4,16 @@
 
     <div class="row">
         <div class="col-md-4">
-            <div class="new-categorie">
+            <div class="new-user" style="background-color: white">
                 <h1 class="titreG">Créer une Categorie</h1>
                 {{ form_start(form) }}
                 {{ form_widget(form) }}
                 <input type="submit" value="Créer"/>
                 {{ form_end(form) }}
-
+                <br>
                 <ul>
                     <li>
-                        <a href="{{ path('categorie_index') }}">Retour à la liste</a>
+                        <a href="{{ path('categorie_index') }}" class="bouton-relief">Retour à la liste</a>
                     </li>
                 </ul>
             </div>

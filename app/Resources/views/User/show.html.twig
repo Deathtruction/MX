@@ -4,7 +4,7 @@
 
     <div class="row">
         <div class="col-lg-4">
-            <div style="background-color: #e6e6e6">
+            <div style="background-color: #e6e6e6" class="new-user">
                 <h1 style="text-align: center" class="titreG">Profil Membre</h1>
                 <table style="background-color:white">
                     <tbody>
@@ -89,22 +89,23 @@
                     {#<a href="{{ path('user_index') }}">Retour à la liste</a>#}
                     {#</li>#}
                     <li>
-                        <a href="{{ path('user_edit', { 'id': user.id }) }}">Modifier profil</a>
+                        <a href="{{ path('user_edit', { 'id': user.id }) }}" class="bouton-relief">Modifier profil</a>
                     </li>
                     <br>
                     <li>
-                        <a href="{{ path('moto_index') }}">Afficher la liste de mes motos</a>
+                        <a href="{{ path('moto_index') }}" class="bouton-relief">Afficher la liste de mes motos</a>
                     </li>
                     <br>
                     <li>
-                        <a href="{{ path('moto_new') }}">Ajouter Moto</a>
+                        <a href="{{ path('moto_new') }}" class="bouton-relief">Ajouter Moto</a>
                     </li>
-                    <br>
+                    <br><br><br>
                     <li>
                         {{ form_start(delete_form) }}
                         <input type="submit" value="Supprimer compte">
                         {{ form_end(delete_form) }}
                     </li>
+                    <br>
                 </ul>
             </div>
         </div>
