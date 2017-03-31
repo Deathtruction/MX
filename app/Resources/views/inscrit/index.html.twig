@@ -1,48 +1,50 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
     <div class="row">
-        <div class="col-lg-5" style="background-color: #e6e6e6">
-            <h1 style="text-align: center" class="titreG">Liste des Inscrits</h1>
-            <table style="background-color: white">
-                <thead>
-                <tr style="background-color: white">
-                    {#<th>Id</th>#}
-                    <th>Num Dossard</th>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>Club</th>
-                    <th>Catégorie</th>
-                    {#<th>Actions</th>#}
-                </tr>
-                </thead>
-                <tbody>
-                {% for inscrit in inscrits %}
-                    <tr>
-                        {#<td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>#}
-
-                        <td>{{ inscrit.user.numDossard }}</td>
-                        <td>{{ inscrit.user.nom }}</td>
-                        <td>{{ inscrit.user.prenom }}</td>
-                        <td>{{ inscrit.user.club }}</td>
-                        <td>{{ inscrit.categorie.nom }}</td>
-
-                        {#<td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>#}
-                        {#<td>#}
-                            {#<ul>#}
-                            {#<li>#}
-                            {#<a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">Montrer</a>#}
-                            {#</li>#}
-                            {#<li>#}
-                            {#<a href="{{ path('inscrit_edit', { 'id': inscrit.id }) }}">Mdifier</a>#}
-                            {#</li>#}
-                            {#</ul>#}
-                        {#</td>#}
+        <div class="col-lg-6">
+            <div class="new-user" style="background-color: #e6e6e6">
+                <h1 style="text-align: center" class="titreG">Liste des Inscrits</h1>
+                <table style="background-color: white">
+                    <thead>
+                    <tr style="background-color: white">
+                        {#<th>Id</th>#}
+                        <th>Numéro de dossard</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Club</th>
+                        <th>Catégorie</th>
+                        {#<th>Actions</th>#}
                     </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    {% for inscrit in inscrits %}
+                        <tr>
+                            {#<td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>#}
+
+                            <td>{{ inscrit.user.numDossard }}</td>
+                            <td>{{ inscrit.user.nom }}</td>
+                            <td>{{ inscrit.user.prenom }}</td>
+                            <td>{{ inscrit.user.club }}</td>
+                            <td>{{ inscrit.categorie.nom }}</td>
+                            {% if is_granted('ROLE_GERANT') %}
+                                <td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">Montrer</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('inscrit_edit', { 'id': inscrit.id }) }}">Modifier</a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -32,7 +32,7 @@ class UserType extends AbstractType
             ->add('permisMoto')
             ->add('numDossard');
     }
-    
+
     /**
      * {@inheritdoc}
      */

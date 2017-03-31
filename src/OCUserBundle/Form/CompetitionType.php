@@ -25,7 +25,7 @@ class CompetitionType extends AbstractType
             ->add('inscriptionOuverte')
             ->add('nbParticipants');
     }
-    
+
     /**
      * {@inheritdoc}
      */

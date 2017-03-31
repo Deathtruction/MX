@@ -17,7 +17,7 @@ class ResultatType extends AbstractType
             ->add('position')
             ->add('point');
     }
-    
+
     /**
      * {@inheritdoc}
      */

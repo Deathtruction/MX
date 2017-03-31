@@ -1,72 +1,72 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="row">
-    <div style="background-color: #e6e6e6" class="col-md-3">
-    <h1 class="titreG">Competition</h1>
+    <div class="row">
+        <div style="background-color: #e6e6e6" class="col-md-3">
+            <h1 class="titreG">Competition</h1>
 
-    <table style="background-color: white">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ competition.id }}</td>
-            </tr>
-            <tr>
-                <th>Date</th>
-                <td>{{ competition.date }}</td>
-            </tr>
-            <tr>
-                <th>Lieu</th>
-                <td>{{ competition.lieu }}</td>
-            </tr>
-            <tr>
-                <th>Departement</th>
-                <td>{{ competition.departement }}</td>
-            </tr>
-            <tr>
-                <th>Club</th>
-                <td>{{ competition.club }}</td>
-            </tr>
-            <tr>
-                <th>Correspondants</th>
-                <td>{{ competition.correspondants }}</td>
-            </tr>
-            <tr>
-                <th>Cylindreaccepter</th>
-                <td>{{ competition.cylindreAccepter }}</td>
-            </tr>
-            <tr>
-                <th>Type</th>
-                <td>{{ competition.type }}</td>
-            </tr>
-            <tr>
-                <th>Datelimiteinscription</th>
-                <td>{{ competition.dateLimiteInscription }}</td>
-            </tr>
-            <tr>
-                <th>Inscriptionouverte</th>
-                <td>{{ competition.inscriptionOuverte }}</td>
-            </tr>
-            <tr>
-                <th>Nbparticipants</th>
-                <td>{{ competition.nbParticipants }}</td>
-            </tr>
-        </tbody>
-    </table>
+            <table style="background-color: white">
+                <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ competition.id }}</td>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <td>{{ competition.date }}</td>
+                </tr>
+                <tr>
+                    <th>Lieu</th>
+                    <td>{{ competition.lieu }}</td>
+                </tr>
+                <tr>
+                    <th>Departement</th>
+                    <td>{{ competition.departement }}</td>
+                </tr>
+                <tr>
+                    <th>Club</th>
+                    <td>{{ competition.club }}</td>
+                </tr>
+                <tr>
+                    <th>Correspondants</th>
+                    <td>{{ competition.correspondants }}</td>
+                </tr>
+                <tr>
+                    <th>Cylindreaccepter</th>
+                    <td>{{ competition.cylindreAccepter }}</td>
+                </tr>
+                <tr>
+                    <th>Type</th>
+                    <td>{{ competition.type }}</td>
+                </tr>
+                <tr>
+                    <th>Datelimiteinscription</th>
+                    <td>{{ competition.dateLimiteInscription }}</td>
+                </tr>
+                <tr>
+                    <th>Inscriptionouverte</th>
+                    <td>{{ competition.inscriptionOuverte }}</td>
+                </tr>
+                <tr>
+                    <th>Nbparticipants</th>
+                    <td>{{ competition.nbParticipants }}</td>
+                </tr>
+                </tbody>
+            </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('competition_index') }}">Retour à la liste</a>
-        </li>
-        <li>
-            <a href="{{ path('competition_edit', { 'id': competition.id }) }}">Modifier</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Supprimer">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+            <ul>
+                <li>
+                    <a href="{{ path('competition_index') }}">Retour à la liste</a>
+                </li>
+                <li>
+                    <a href="{{ path('competition_edit', { 'id': competition.id }) }}">Modifier</a>
+                </li>
+                <li>
+                    {{ form_start(delete_form) }}
+                    <input type="submit" value="Supprimer">
+                    {{ form_end(delete_form) }}
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
 {% endblock %}

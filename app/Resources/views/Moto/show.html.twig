@@ -5,30 +5,30 @@
 
     <table style="background-color: white">
         <tbody>
-            <tr>
-                {#<th>Id</th>#}
-                {#<td>{{ moto.id }}</td>#}
-            </tr>
-            <tr>
-                <th>Id</th>
-                <td>{{ user.id }}</td>
-            </tr>
-            <tr>
-                <th>Numéro cadre</th>
-                <td>{{ moto.numCadre }}</td>
-            </tr>
-            <tr>
-                <th>Numéro moteur</th>
-                <td>{{ moto.numMoteur }}</td>
-            </tr>
-            <tr>
-                <th>Marque</th>
-                <td>{{ moto.marque }}</td>
-            </tr>
-            <tr>
-                <th>Cylindre</th>
-                <td>{{ moto.cylindre }}</td>
-            </tr>
+        <tr>
+            {#<th>Id</th>#}
+            {#<td>{{ moto.id }}</td>#}
+        </tr>
+        <tr>
+            <th>Id</th>
+            <td>{{ user.id }}</td>
+        </tr>
+        <tr>
+            <th>Numéro cadre</th>
+            <td>{{ moto.numCadre }}</td>
+        </tr>
+        <tr>
+            <th>Numéro moteur</th>
+            <td>{{ moto.numMoteur }}</td>
+        </tr>
+        <tr>
+            <th>Marque</th>
+            <td>{{ moto.marque }}</td>
+        </tr>
+        <tr>
+            <th>Cylindre</th>
+            <td>{{ moto.cylindre }}</td>
+        </tr>
         </tbody>
     </table><br>
 
@@ -37,11 +37,12 @@
             <li><a href="{{ path('user_show', { 'id': app.user.id }) }}">Retour au Profil</a></li><br>
         {% endif %}
         {#<li>#}
-            {#<a href="{{ path('moto_index') }}">Retour à la liste</a>#}
+        {#<a href="{{ path('moto_index') }}">Retour à la liste</a>#}
         {#</li>#}
         <li>
             <a href="{{ path('moto_edit', { 'id': moto.id }) }}">Modifier Moto</a>
-        </li><br>
+        </li>
+        <br>
         <li>
             {{ form_start(delete_form) }}
             <input type="submit" value="Supprimer">
