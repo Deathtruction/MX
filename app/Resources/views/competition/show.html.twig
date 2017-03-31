@@ -13,7 +13,7 @@
             </tr>
             <tr>
                 <th>Date</th>
-                <td>{{ competition.date }}</td>
+                <td>{{ competition.date | date(d.M.y) }}</td>
             </tr>
             <tr>
                 <th>Lieu</th>
@@ -32,7 +32,7 @@
                 <td>{{ competition.correspondants }}</td>
             </tr>
             <tr>
-                <th>Cylindreaccepter</th>
+                <th>Cylindrée accepté</th>
                 <td>{{ competition.cylindreAccepter }}</td>
             </tr>
             <tr>
@@ -40,15 +40,15 @@
                 <td>{{ competition.type }}</td>
             </tr>
             <tr>
-                <th>Datelimiteinscription</th>
+                <th>Date limite d'inscription</th>
                 <td>{{ competition.dateLimiteInscription }}</td>
             </tr>
             <tr>
-                <th>Inscriptionouverte</th>
+                <th>Inscription ouverte</th>
                 <td>{{ competition.inscriptionOuverte }}</td>
             </tr>
             <tr>
-                <th>Nbparticipants</th>
+                <th>Nb participants</th>
                 <td>{{ competition.nbParticipants }}</td>
             </tr>
         </tbody>
