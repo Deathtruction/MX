@@ -26,9 +26,16 @@ class MotoController extends Controller
      */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getManager();
+        $token = $this->container->get('security.token_storage')->getToken();
+        $user = $token->getUser();
+        $id = $user->getId();
 
-        $motos = $em->getRepository('OCUserBundle:Moto')->findAll();
+
+        $em = $this->getDoctrine()->getManager();
+        $motos = $em->getRepository('OCUserBundle:Moto')->findBy(array(
+            'user'=>$id,
+        ));
+
 
         return $this->render('moto/index.html.twig', array(
             'motos' => $motos,
