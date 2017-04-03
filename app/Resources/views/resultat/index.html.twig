@@ -14,6 +14,7 @@
                         <th>Nom</th>
                         <th>Prénom</th>
                         <th>Nombre de points</th>
+                        <th>Club</th>
                         {#<th>Actions</th>#}
                     </tr>
                     </thead>
@@ -26,6 +27,7 @@
                             <td>{{ resultat.user.nom }}</td>
                             <td>{{ resultat.user.prenom }}</td>
                             <td>{{ resultat.point }}</td>
+                            <td>{{ resultat.user.club }}</td>
                             {% if is_granted('ROLE_GERANT') %}
                                 <td>
                                     <ul>

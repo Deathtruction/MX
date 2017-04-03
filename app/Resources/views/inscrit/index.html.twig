@@ -8,27 +8,31 @@
                 <table style="background-color: white">
                     <thead>
                     <tr style="background-color: white">
-                        {#<th>Id</th>#}
+                        {% if is_granted('ROLE_GERANT') %}
+                        <th>Id</th>
+                        {% endif %}
                         <th>Numéro de dossard</th>
                         <th>Nom</th>
                         <th>Prénom</th>
                         <th>Club</th>
                         <th>Catégorie</th>
-                        {#<th>Actions</th>#}
+                        {% if is_granted('ROLE_GERANT') %}
+                        <th>Actions</th>
+                        {% endif %}
                     </tr>
                     </thead>
                     <tbody>
                     {% for inscrit in inscrits %}
                         <tr>
-                            {#<td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>#}
-
+                            {% if is_granted('ROLE_GERANT') %}
+                            <td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>
+                            {% endif %}
                             <td>{{ inscrit.user.numDossard }}</td>
                             <td>{{ inscrit.user.nom }}</td>
                             <td>{{ inscrit.user.prenom }}</td>
                             <td>{{ inscrit.user.club }}</td>
                             <td>{{ inscrit.categorie.nom }}</td>
                             {% if is_granted('ROLE_GERANT') %}
-                                <td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>
                                 <td>
                                     <ul>
                                         <li>

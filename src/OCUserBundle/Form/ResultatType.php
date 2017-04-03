@@ -2,6 +2,8 @@
 
 namespace OCUserBundle\Form;
 
+use OCUserBundle\Entity\User;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,7 +17,11 @@ class ResultatType extends AbstractType
     {
         $builder
             ->add('position')
-            ->add('point');
+            ->add('point')
+            ->add('user', EntityType::class, array(
+                "class" => User::class,
+                "choice_label" => 'numDossard'
+    ));
     }
 
     /**
