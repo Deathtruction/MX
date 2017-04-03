@@ -8,20 +8,26 @@
                 <table style="background-color: white">
                     <thead>
                     <tr>
-                        {#<th>Id</th>#}
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <th>Id</th>
+                        {% endif %}
                         <th>Position</th>
                         <th>Numéro de Dossard</th>
                         <th>Nom</th>
                         <th>Prénom</th>
                         <th>Nombre de points</th>
                         <th>Club</th>
-                        {#<th>Actions</th>#}
+                        {% if is_granted('ROLE_GERANT') %}
+                        <th>Actions</th>
+                        {% endif %}
                     </tr>
                     </thead>
                     <tbody>
                     {% for resultat in resultats %}
                         <tr>
-                            {#<td><a href="{{ path('resultat_show', { 'id': resultat.id }) }}">{{ resultat.id }}</a></td>#}
+                            {% if is_granted('ROLE_ADMIN') %}
+                            <td><a href="{{ path('resultat_show', { 'id': resultat.id }) }}">{{ resultat.id }}</a></td>
+                            {% endif %}
                             <td>{{ resultat.position }}</td>
                             <td>{{ resultat.user.numDossard }}</td>
                             <td>{{ resultat.user.nom }}</td>

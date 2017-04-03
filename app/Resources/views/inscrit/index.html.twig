@@ -8,7 +8,7 @@
                 <table style="background-color: white">
                     <thead>
                     <tr style="background-color: white">
-                        {% if is_granted('ROLE_GERANT') %}
+                        {% if is_granted('ROLE_ADMIN') %}
                         <th>Id</th>
                         {% endif %}
                         <th>Numéro de dossard</th>
@@ -16,7 +16,7 @@
                         <th>Prénom</th>
                         <th>Club</th>
                         <th>Catégorie</th>
-                        {% if is_granted('ROLE_GERANT') %}
+                        {% if is_granted('ROLE_ADMIN') %}
                         <th>Actions</th>
                         {% endif %}
                     </tr>

@@ -4,14 +4,14 @@
     <div class="row">
         <div class="col-md-4">
             <div class="new-resultat" style="background-color: #e6e6e6">
-                <h1 class="titreG">Créer un résultat</h1>
+                <h1 class="titreG">Créer type compétition</h1>
                 {{ form_start(form) }}
                 {{ form_widget(form) }}
                 <input type="submit" value="Créer"/>
                 {{ form_end(form) }}<br>
                 <ul>
                     <li>
-                        <a href="{{ path('resultat_index') }}" class="bouton-relief">Retour à la liste</a>
+                        <a href="{{ path('typecompet_index') }}" class="bouton-relief">Retour à la liste</a>
                     </li>
                 </ul>
             </div>
