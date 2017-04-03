@@ -38,9 +38,9 @@
 
 {% block connexion %}{% endblock %}
 
-{% block inscription %}{% endblock %}
+{#{% block inscription %}{% endblock %}#}
 
-{% include 'reseauSociaux.html.twig' %}
+{#{% include 'reseauSociaux.html.twig' %}#}
 
 {% block body %}{% endblock %}
 
@@ -70,6 +70,33 @@
                     <h3 class="widget_title">Liens rapides</h3>
                     <ul>
                         <li><a href="{{ path('logge') }}">Accueil</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="{{ path('login') }}">Connexion</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="{{ path('inscription') }}">Nouveau Membre</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="{{ path('competition_index') }}">Agenda</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="{{ path('inscrit_index') }}">Liste des inscrits</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="{{ path('resultat_index') }}">Résultats</a></li>
+                    </ul>
+                    <ul>
+                        {#<li><a href="{{ path('classement') }}">Classements</a></li>#}
+                    </ul>
+                    <ul>
+                        <li><a href="http://www.cd.ufolep.org/maineetloire/maineetloire_d/data_1/pdf/di/dispositionsreglementsmoto2017.pdf">Réglement Général</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="http://www.cd.ufolep.org/maineetloire/maineetloire_d/data_1/pdf/re/reglementcourses2016.pdf">Réglement Course</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="{{ path('inscrit') }}">Contact</a></li>
                     </ul>
                 </div>
             </div>
