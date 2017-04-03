@@ -1,52 +1,61 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1 class="titreG">Moto</h1>
 
-    <table style="background-color: white">
-        <tbody>
-        <tr>
-            {#<th>Id</th>#}
-            {#<td>{{ moto.id }}</td>#}
-        </tr>
-        <tr>
-            <th>Id</th>
-            <td>{{ user.id }}</td>
-        </tr>
-        <tr>
-            <th>Numéro cadre</th>
-            <td>{{ moto.numCadre }}</td>
-        </tr>
-        <tr>
-            <th>Numéro moteur</th>
-            <td>{{ moto.numMoteur }}</td>
-        </tr>
-        <tr>
-            <th>Marque</th>
-            <td>{{ moto.marque }}</td>
-        </tr>
-        <tr>
-            <th>Cylindre</th>
-            <td>{{ moto.cylindre }}</td>
-        </tr>
-        </tbody>
-    </table><br>
+    <div class="row">
+        <div class="col-lg-4">
+            <div style="background-color: #e6e6e6" class="new-user">
+                <h1 class="titreG">Moto</h1>
 
-    <ul>
-        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-            <li><a href="{{ path('user_show', { 'id': app.user.id }) }}">Retour au Profil</a></li><br>
-        {% endif %}
-        {#<li>#}
-        {#<a href="{{ path('moto_index') }}">Retour à la liste</a>#}
-        {#</li>#}
-        <li>
-            <a href="{{ path('moto_edit', { 'id': moto.id }) }}">Modifier Moto</a>
-        </li>
-        <br>
-        <li>
-            {{ form_start(delete_form) }}
-            <input type="submit" value="Supprimer">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+                <table style="background-color: white">
+                    <tbody>
+                    <tr>
+                        {#<th>Id</th>#}
+                        {#<td>{{ moto.id }}</td>#}
+                    </tr>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ user.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Numéro cadre</th>
+                        <td>{{ moto.numCadre }}</td>
+                    </tr>
+                    <tr>
+                        <th>Numéro moteur</th>
+                        <td>{{ moto.numMoteur }}</td>
+                    </tr>
+                    <tr>
+                        <th>Marque</th>
+                        <td>{{ moto.marque }}</td>
+                    </tr>
+                    <tr>
+                        <th>Cylindrée</th>
+                        <td>{{ moto.cylindre }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <ul>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <li><a href="{{ path('user_show', { 'id': app.user.id }) }}" class="bouton-relief">Retour au Profil</a></li><br>
+                    {% endif %}
+                    {#<li>#}
+                    {#<a href="{{ path('moto_index') }}">Retour à la liste</a>#}
+                    {#</li>#}
+                    <li>
+                        <a href="{{ path('moto_edit', { 'id': moto.id }) }}" class="bouton-relief">Modifier Moto</a>
+                    </li>
+                    <br>
+                    <li>
+                        {{ form_start(delete_form) }}
+                        <input type="submit" value="Supprimer">
+                        {{ form_end(delete_form) }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

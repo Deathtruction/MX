@@ -67,7 +67,7 @@ class User implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="dateNaissance", type="string")
+     * @ORM\Column(name="dateNaissance", type="date")
      */
     private $dateNaissance;
 
@@ -81,7 +81,7 @@ class User implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="cp", type="string")
+     * @ORM\Column(name="cp", type="integer")
      */
     private $cp;
 
@@ -137,7 +137,7 @@ class User implements UserInterface
     /**
      * @var string
      *
-     * @ORM\Column(name="numDossard", type="string")
+     * @ORM\Column(name="numDossard", type="integer")
      */
     private $numDossard;
 

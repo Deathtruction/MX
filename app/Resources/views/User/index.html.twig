@@ -2,7 +2,7 @@
 
 {% block body %}
     <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-12">
             <div style="background-color: #e6e6e6" class="new-user">
                 <h1 class="titreG">Liste des Membres</h1>
 
@@ -10,8 +10,8 @@
                     <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Username</th>
-                        <th>Password</th>
+                        <th>Pseudo</th>
+                        <th>Mot de passe</th>
                         <th>Salt</th>
                         <th>Roles</th>
                         <th>Nom</th>
@@ -40,7 +40,7 @@
                             <td>{% if user.roles %}{{ user.roles|join(', ') }}{% endif %}</td>
                             <td>{{ user.nom }}</td>
                             <td>{{ user.prenom }}</td>
-                            <td>{{ user.dateNaissance }}</td>
+                            <td>{{ user.dateNaissance | date ('d-M-y') }}</td>
                             <td>{{ user.adresse }}</td>
                             <td>{{ user.cp }}</td>
                             <td>{{ user.ville }}</td>
@@ -68,7 +68,7 @@
 
                 <ul>
                     <li>
-                        <a href="{{ path('user_new') }}">Créer nouveau Membre</a>
+                        <a href="{{ path('user_new') }}" class="bouton-relief">Créer nouveau Membre</a>
                     </li>
                 </ul>
             </div>

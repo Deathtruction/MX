@@ -3,6 +3,7 @@
 namespace OCUserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -20,7 +21,9 @@ class UserType extends AbstractType
 //            ->add('roles')
             ->add('nom')
             ->add('prenom')
-            ->add('dateNaissance')
+            ->add('dateNaissance', DateType::class, array(
+                'widget' => 'single_text',
+            ))
             ->add('adresse')
             ->add('cp')
             ->add('ville')

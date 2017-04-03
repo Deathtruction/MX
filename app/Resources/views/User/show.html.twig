@@ -13,11 +13,11 @@
                     {#<td>{{ user.id }}</td>#}
                     {#</tr>#}
                     <tr>
-                        <th>Username</th>
+                        <th>Pseudo</th>
                         <td>{{ user.username }}</td>
                     </tr>
                     <tr>
-                        <th>Password</th>
+                        <th>Mot de passe</th>
                         <td>{{ user.password }}</td>
                     </tr>
                     {#<tr>#}
@@ -38,7 +38,7 @@
                     </tr>
                     <tr>
                         <th>Date Naissance</th>
-                        <td>{{ user.dateNaissance }}</td>
+                        <td>{{ user.dateNaissance | date ('d-M-y') }}</td>
                     </tr>
                     <tr>
                         <th>Adresse</th>

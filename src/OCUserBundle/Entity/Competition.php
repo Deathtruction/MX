@@ -80,7 +80,7 @@ class Competition
     /**
      * @var string
      *
-     * @ORM\Column(name="inscriptionOuverte", type="boolean")
+     * @ORM\Column(name="inscriptionOuverte", type="string")
      */
     private $inscriptionOuverte;
 

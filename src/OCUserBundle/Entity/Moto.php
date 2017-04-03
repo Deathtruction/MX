@@ -45,7 +45,7 @@ class Moto
     /**
      * @var string
      *
-     * @ORM\Column(name="cylindre", type="string", length=255)
+     * @ORM\Column(name="cylindre", type="integer")
      */
     private $cylindre;
 

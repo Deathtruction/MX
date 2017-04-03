@@ -36,8 +36,8 @@ class CompetitionType extends AbstractType
             ))
             ->add('inscriptionOuverte', ChoiceType::class, array(
                 'choices' => array(
-                    'oui' => true,
-                    'non' => false
+                    'oui' => 'oui',
+                    'non' => 'non'
                 )
             ))
             ->add('nbParticipants');

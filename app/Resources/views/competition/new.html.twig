@@ -7,16 +7,16 @@
             <div class="new-user" style="background-color: #e6e6e6">
                 <h1 class="titreG">Créer une Competition</h1>
                 {{ form_start(form) }}
-                {{ form_widget(form) }}
+                {{ form_widget(form) }}<br>
                 <input type="submit" value="Créer"/>
                 {{ form_end(form) }}
 
-                <ul>
-                    <li><br>
-                    <li><a href="{{ path('user_show', { 'id': app.user.id }) }}" class="bouton-relief">Retour au
-                            Profil</a></li>
-                    </li>
-                </ul>
+                {#<ul>#}
+                    {#<li><br>#}
+                    {#<li><a href="{{ path('user_show', { 'id': app.user.id }) }}" class="bouton-relief">Retour au#}
+                            {#Profil</a></li>#}
+                    {#</li>#}
+                {#</ul>#}
             </div>
         </div>
     </div>
