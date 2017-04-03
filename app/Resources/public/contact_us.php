@@ -19,8 +19,8 @@ if (!$_POST) {
 		echo "empty_message";
 	}else {
 		// edit this only :)
-		$your_email = "youremail@gmail.com";
-		$your_name = "vbegy";
+		$your_email = "kevin_mongault@orange.fr";
+		$your_name = "Deathtruction";
 		
 		$name	 = clean_text($_POST["name"]);
 		$mail	 = clean_text($_POST["mail"]);
