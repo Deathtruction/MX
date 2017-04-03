@@ -48,6 +48,14 @@
                     {% endfor %}
                     </tbody>
                 </table>
+                {#{% if is_granted('ROLE_ADMIN') %}#}
+                    {#<ul>#}
+                        {#<li>#}
+                            {#<a href="{{ path('inscrit_new', { 'id': inscrit.id }) }}" class="bouton-relief">Créer une nouvelle inscription</a>#}
+                        {#</li>#}
+                    {#</ul>#}
+                    {#<br>#}
+                {#{% endif %}#}
             </div>
         </div>
     </div>

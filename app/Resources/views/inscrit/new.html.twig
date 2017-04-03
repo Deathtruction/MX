@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
     <div class="row">
         <div class="col-md-4">
             <div class="new-user" style="background-color: white">
@@ -9,13 +8,14 @@
                 {{ form_start(form) }}
                 {{ form_widget(form) }}<br>
                 <input type="submit" value="Créer"/>
-                {{ form_end(form) }}
-
-                {#<ul>#}
-                {#<li>#}
-                {#<a href="{{ path('inscrit_index') }}">Retour à la liste</a>#}
-                {#</li>#}
-                {#</ul>#}
+                {{ form_end(form) }}<br>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <ul>
+                        <li>
+                            <a href="{{ path('inscrit_index') }}" class="bouton-relief">Retour à la liste</a>
+                        </li>
+                    </ul>
+                {% endif %}
             </div>
         </div>
     </div>
