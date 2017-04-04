@@ -7,22 +7,22 @@
             <table style="background-color: white">
                 <thead>
                 <div style="background-color: #e6e6e6">
-                <h1 class="titreG">Liste des Competitions</h1>
-                <tr>
-                    {#<th>Id</th>#}
-                    <th>Date</th>
-                    <th>Lieu</th>
-                    <th>Departement</th>
-                    <th>Club</th>
-                    <th>Correspondants</th>
-                    <th>Cylindrée Accepté</th>
-                    <th>Type</th>
-                    <th>Date Limite d'inscription</th>
-                    <th>Inscription Ouverte</th>
-                    <th>Nb Participants</th>
-                    {#<th>Inscription course</th>#}
-                    {#<th>Actions</th>#}
-                </tr>
+                    <h1 class="titreG">Liste des Competitions</h1>
+                    <tr>
+                        {#<th>Id</th>#}
+                        <th>Date</th>
+                        <th>Lieu</th>
+                        <th>Departement</th>
+                        <th>Club</th>
+                        <th>Correspondants</th>
+                        <th>Cylindrée Accepté</th>
+                        <th>Type</th>
+                        <th>Date Limite d'inscription</th>
+                        <th>Inscription Ouverte</th>
+                        <th>Nb Participants</th>
+                        {#<th>Inscription course</th>#}
+                        {#<th>Actions</th>#}
+                    </tr>
                 </div>
                 </thead>
                 <tbody>
@@ -47,12 +47,12 @@
                                             compétition</a>
                                     </li>
                                     {% if is_granted('ROLE_GERANT') %}
-                                    <li>
-                                    <a href="{{ path('competition_show', { 'id': competition.id }) }}">Montrer</a>
-                                    </li>
-                                    <li>
-                                    <a href="{{ path('competition_edit', { 'id': competition.id }) }}">Modifier</a>
-                                    </li>
+                                        <li>
+                                            <a href="{{ path('competition_show', { 'id': competition.id }) }}">Montrer</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('competition_edit', { 'id': competition.id }) }}">Modifier</a>
+                                        </li>
                                     {% endif %}
                                 </ul>
                             </td>
