@@ -102,10 +102,7 @@ class User implements UserInterface
 
     /**
      * @var string
-     * @Assert\Email(
-     *     message = "L'email '{{ value }}' n'est pas valide.",
-     *     checkMX = true
-     * )
+     *
      * @ORM\Column(name="mail", type="string")
      */
     private $mail;
