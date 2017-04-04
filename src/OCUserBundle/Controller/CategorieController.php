@@ -3,6 +3,7 @@
 namespace OCUserBundle\Controller;
 
 use OCUserBundle\Entity\Categorie;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -17,6 +18,8 @@ class CategorieController extends Controller
 {
     /**
      * Lists all categorie entities.
+     *
+     * @Security("has_role('ROLE_GERANT')")
      *
      * @Route("/", name="categorie_index")
      * @Method("GET")
@@ -34,6 +37,8 @@ class CategorieController extends Controller
 
     /**
      * Creates a new categorie entity.
+     *
+     * @Security("has_role('ROLE_GERANT')")
      *
      * @Route("/new", name="categorie_new")
      * @Method({"GET", "POST"})
@@ -61,6 +66,8 @@ class CategorieController extends Controller
     /**
      * Finds and displays a categorie entity.
      *
+     * @Security("has_role('ROLE_GERANT')")
+     *
      * @Route("/{id}", name="categorie_show")
      * @Method("GET")
      */
@@ -76,6 +83,8 @@ class CategorieController extends Controller
 
     /**
      * Displays a form to edit an existing categorie entity.
+     *
+     * @Security("has_role('ROLE_GERANT')")
      *
      * @Route("/{id}/edit", name="categorie_edit")
      * @Method({"GET", "POST"})

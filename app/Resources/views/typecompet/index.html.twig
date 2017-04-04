@@ -2,10 +2,10 @@
 
 {% block body %}
     <div class="row">
-        <div class="col-md-4">
-            <div class="new-categorie" style="background-color: #e6e6e6">
-                <h1 class="titreG">Listes des Categories</h1>
-                <table>
+        <div class="col-md-6">
+            <div style="background-color: #e6e6e6" class="new-resultat">
+                <h1 class="titreG">Liste des types de compétitions</h1>
+                <table style="background-color: white">
                     <thead>
                     <tr>
                         <th>Id</th>
@@ -14,18 +14,19 @@
                     </tr>
                     </thead>
                     <tbody>
-                    {% for categorie in categories %}
+                    {% for typeCompet in typeCompets %}
                         <tr>
-                            <td><a href="{{ path('categorie_show', { 'id': categorie.id }) }}">{{ categorie.id }}</a>
+                            <td>
+                                <a href="{{ path('typecompet_show', { 'id': typeCompet.id }) }}">{{ typeCompet.id }}</a>
                             </td>
-                            <td>{{ categorie.nom }}</td>
+                            <td>{{ typeCompet.nom }}</td>
                             <td>
                                 <ul>
                                     <li>
-                                        <a href="{{ path('categorie_show', { 'id': categorie.id }) }}">Montrer</a>
+                                        <a href="{{ path('typecompet_show', { 'id': typeCompet.id }) }}">Montrer</a>
                                     </li>
                                     <li>
-                                        <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}">Modifier</a>
+                                        <a href="{{ path('typecompet_edit', { 'id': typeCompet.id }) }}">Modifier</a>
                                     </li>
                                 </ul>
                             </td>
@@ -35,7 +36,8 @@
                 </table>
                 <ul>
                     <li>
-                        <a href="{{ path('categorie_new') }}" class="bouton-relief">Créer une nouvelle categorie</a>
+                        <a href="{{ path('typecompet_new') }}" class="bouton-relief">Créer un nouveau type
+                            compétition</a>
                     </li>
                 </ul>
             </div>

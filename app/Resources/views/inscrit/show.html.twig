@@ -8,10 +8,10 @@
 
                 <table style="background-color: white">
                     <tbody>
-                    {#<tr>#}
-                    {#<th>Id</th>#}
-                    {#<td>{{ inscrit.id }}</td>#}
-                    {#</tr>#}
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ inscrit.id }}</td>
+                    </tr>
                     <tr>
                         <th>NumDossard</th>
                         <td>{{ user.numDossard }}</td>
@@ -36,9 +36,7 @@
                 </table>
 
                 <ul>
-                    <li><a href="{{ path('user_show', { 'id': app.user.id }) }}" class="bouton-relief">Retour au
-                            Profil</a></li>
-                    <br>
+                    <li><a href="{{ path('inscrit_index') }}" class="bouton-relief">Retour à la liste</a></li><br>
                     <li>
                         <a href="{{ path('inscrit_edit', { 'id': inscrit.id }) }}" class="bouton-relief">Modifier</a>
                     </li>

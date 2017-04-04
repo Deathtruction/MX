@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
     <div class="row">
         <div class="col-md-4">
             <div class="new-user" style="background-color: #e6e6e6">
@@ -10,15 +9,13 @@
                 {{ form_widget(form) }}<br>
                 <input type="submit" value="Créer"/>
                 {{ form_end(form) }}
-
-                {#<ul>#}
-                    {#<li><br>#}
-                    {#<li><a href="{{ path('user_show', { 'id': app.user.id }) }}" class="bouton-relief">Retour au#}
-                            {#Profil</a></li>#}
-                    {#</li>#}
-                {#</ul>#}
+                <br>
+                <ul>
+                    <li>
+                        <a href="{{ path('competition_index') }}" class="bouton-relief">Retour à la liste</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-
 {% endblock %}

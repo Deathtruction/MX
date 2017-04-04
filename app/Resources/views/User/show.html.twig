@@ -20,14 +20,16 @@
                         <th>Mot de passe</th>
                         <td>{{ user.password }}</td>
                     </tr>
-                    {#<tr>#}
-                    {#<th>Salt</th>#}
-                    {#<td>{{ user.salt }}</td>#}
-                    {#</tr>#}
-                    {#<tr>#}
-                    {#<th>Roles</th>#}
-                    {#<td>{% if user.roles %}{{ user.roles|join(', ') }}{% endif %}</td>#}
-                    {#</tr>#}
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <tr>
+                        <th>Salt</th>
+                        <td>{{ user.salt }}</td>
+                    </tr>
+                    <tr>
+                        <th>Roles</th>
+                        <td>{% if user.roles %}{{ user.roles|join(', ') }}{% endif %}</td>
+                    </tr>
+                    {% endif %}
                     <tr>
                         <th>Nom</th>
                         <td>{{ user.nom }}</td>
@@ -85,9 +87,11 @@
 
                 <br>
                 <ul>
-                    {#<li>#}
-                    {#<a href="{{ path('user_index') }}">Retour à la liste</a>#}
-                    {#</li>#}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li>
+                            <a href="{{ path('user_index') }}" class="bouton-relief">Retour à la liste</a>
+                        </li><br>
+                    {% endif %}
                     <li>
                         <a href="{{ path('user_edit', { 'id': user.id }) }}" class="bouton-relief">Modifier profil</a>
                     </li>

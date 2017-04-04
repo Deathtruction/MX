@@ -64,6 +64,8 @@ class CompetitionController extends Controller
     /**
      * Finds and displays a competition entity.
      *
+     * @Security("has_role('ROLE_GERANT')")
+     *
      * @Route("/{id}", name="competition_show")
      * @Method("GET")
      */

@@ -2,36 +2,34 @@
 
 {% block body %}
     <div class="row">
-        <div class="col-lg-4">
-            <div style="background-color: #e6e6e6" class="new-user">
-                <h1 class="titreG">Categorie</h1>
-                <table style="background-color:white">
+        <div class="col-md-4">
+            <div class="new-resultat" style="background-color: #e6e6e6">
+                <h1 class="titreG">Type compétition</h1>
+                <table style="background-color: white">
                     <tbody>
                     <tr>
                         <th>Id</th>
-                        <td>{{ categorie.id }}</td>
+                        <td>{{ typeCompet.id }}</td>
                     </tr>
                     <tr>
                         <th>Nom</th>
-                        <td>{{ categorie.nom }}</td>
+                        <td>{{ typeCompet.nom }}</td>
                     </tr>
                     </tbody>
                 </table>
                 <ul>
                     <li>
-                        <a href="{{ path('categorie_index') }}" class="bouton-relief">Retour à la liste</a>
-                    </li>
-                    <br>
+                        <a href="{{ path('typecompet_index') }}" class="bouton-relief">Retour à la liste</a>
+                    </li><br>
                     <li>
-                        <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}"
+                        <a href="{{ path('typecompet_edit', { 'id': typeCompet.id }) }}"
                            class="bouton-relief">Modifier</a>
-                    </li>
-                    <br>
+                    </li><br>
                     <li>
                         {{ form_start(delete_form) }}
                         <input type="submit" value="Supprimer">
                         {{ form_end(delete_form) }}
-                    </li>
+                    </li><br>
                 </ul>
             </div>
         </div>

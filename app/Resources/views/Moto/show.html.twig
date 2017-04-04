@@ -10,12 +10,10 @@
                 <table style="background-color: white">
                     <tbody>
                     <tr>
-                        {#<th>Id</th>#}
-                        {#<td>{{ moto.id }}</td>#}
-                    </tr>
-                    <tr>
-                        <th>Id</th>
-                        <td>{{ user.id }}</td>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <th>Id</th>
+                            <td>{{ moto.id }}</td>
+                        {% endif %}
                     </tr>
                     <tr>
                         <th>Numéro cadre</th>
@@ -36,10 +34,10 @@
                     </tbody>
                 </table>
                 <br>
-
                 <ul>
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <li><a href="{{ path('user_show', { 'id': app.user.id }) }}" class="bouton-relief">Retour au Profil</a></li><br>
+                        <li><a href="{{ path('user_show', { 'id': app.user.id }) }}" class="bouton-relief">Retour au
+                                Profil</a></li><br>
                     {% endif %}
                     {#<li>#}
                     {#<a href="{{ path('moto_index') }}">Retour à la liste</a>#}

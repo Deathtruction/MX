@@ -5,12 +5,12 @@ namespace OCUserBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Categorie
+ * TypeCompet
  *
- * @ORM\Table(name="categorie")
- * @ORM\Entity(repositoryClass="OCUserBundle\Repository\CategorieRepository")
+ * @ORM\Table(name="type_compet")
+ * @ORM\Entity(repositoryClass="OCUserBundle\Repository\TypeCompetRepository")
  */
-class Categorie
+class TypeCompet
 {
     /**
      * @var int
@@ -28,10 +28,6 @@ class Categorie
      */
     private $nom;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="OCUserBundle\Entity\Competition", fetch="EAGER")
-     */
-    private $competition;
 
     /**
      * Get id
@@ -48,7 +44,7 @@ class Categorie
      *
      * @param string $nom
      *
-     * @return Categorie
+     * @return TypeCompet
      */
     public function setNom($nom)
     {
@@ -66,22 +62,5 @@ class Categorie
     {
         return $this->nom;
     }
-
-    /**
-     * @return \OCUserBundle\Entity\Competition
-     */
-    public function getCompetition()
-    {
-        return $this->competition;
-    }
-
-    /**
-     * @param \OCUserBundle\Entity\Competition $competition
-     */
-    public function setCompetition($competition)
-    {
-        $this->competition = $competition;
-    }
-
 }
 

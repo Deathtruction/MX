@@ -5,15 +5,14 @@
         <div class="col-md-4">
             <div class="new-user" style="background-color: #e6e6e6">
                 <h1 class="titreG">Modifier Competition</h1>
-
                 {{ form_start(edit_form) }}
                 {{ form_widget(edit_form) }}<br>
                 <input type="submit" value="Valider la modification"/>
                 {{ form_end(edit_form) }}
-
                 <ul>
                     <li>
-                        <br> <a href="{{ path('competition_index') }}" class="bouton-relief">Retour à la liste</a><br><br>
+                        <br> <a href="{{ path('competition_index') }}" class="bouton-relief">Retour à la
+                            liste</a><br><br>
                     </li>
                     <li>
                         {{ form_start(delete_form) }}

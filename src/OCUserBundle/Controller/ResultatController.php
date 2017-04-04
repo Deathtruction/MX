@@ -3,6 +3,7 @@
 namespace OCUserBundle\Controller;
 
 use OCUserBundle\Entity\Resultat;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -35,6 +36,8 @@ class ResultatController extends Controller
     /**
      * Creates a new resultat entity.
      *
+     * @Security("has_role('ROLE_GERANT')")
+     *
      * @Route("/new", name="resultat_new")
      * @Method({"GET", "POST"})
      */
@@ -64,6 +67,8 @@ class ResultatController extends Controller
     /**
      * Finds and displays a resultat entity.
      *
+     * @Security("has_role('ROLE_GERANT')")
+     *
      * @Route("/{id}", name="resultat_show")
      * @Method("GET")
      */
@@ -80,6 +85,8 @@ class ResultatController extends Controller
 
     /**
      * Displays a form to edit an existing resultat entity.
+     *
+     * @Security("has_role('ROLE_GERANT')")
      *
      * @Route("/{id}/edit", name="resultat_edit")
      * @Method({"GET", "POST"})

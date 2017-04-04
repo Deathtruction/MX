@@ -5,13 +5,12 @@
         <div class="col-md-4">
             <div class="new-resultat" style="background-color: #e6e6e6">
                 <h1 class="titreG">Resultat</h1>
-
                 <table style="background-color: white">
                     <tbody>
-                    {#<tr>#}
-                    {#<th>Id</th>#}
-                    {#<td>{{ resultat.id }}</td>#}
-                    {#</tr>#}
+                    <tr>
+                    <th>Id</th>
+                    <td>{{ resultat.id }}</td>
+                    </tr>
                     <tr>
                         <th>Position</th>
                         <td>{{ resultat.position }}</td>
@@ -32,24 +31,24 @@
                         <th>Point</th>
                         <td>{{ resultat.point }}</td>
                     </tr>
+                    <tr>
+                        <th>Club</th>
+                        <td>{{ user.club }}</td>
+                    </tr>
                     </tbody>
                 </table>
-
                 <ul>
                     <li>
                         <a href="{{ path('resultat_edit', { 'id': resultat.id }) }}" class="bouton-relief">Modifier</a>
-                    </li>
-                    <br>
+                    </li><br>
                     <li>
                         <a href="{{ path('resultat_index') }}" class="bouton-relief">Retour à la liste</a>
-                    </li>
-                    <br><br><br>
+                    </li><br>
                     <li>
                         {{ form_start(delete_form) }}
                         <input type="submit" value="Supprimer">
                         {{ form_end(delete_form) }}
-                    </li>
-                    <br>
+                    </li><br>
                 </ul>
             </div>
         </div>

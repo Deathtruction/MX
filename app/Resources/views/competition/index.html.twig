@@ -9,7 +9,9 @@
                 <div style="background-color: #e6e6e6">
                     <h1 class="titreG">Liste des Competitions</h1>
                     <tr>
-                        {#<th>Id</th>#}
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <th>Id</th>
+                        {% endif %}
                         <th>Date</th>
                         <th>Lieu</th>
                         <th>Departement</th>
@@ -20,15 +22,21 @@
                         <th>Date Limite d'inscription</th>
                         <th>Inscription Ouverte</th>
                         <th>Nb Participants</th>
-                        {#<th>Inscription course</th>#}
-                        {#<th>Actions</th>#}
+                        <th>Inscription course</th>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <th>Actions</th>
+                        {% endif %}
                     </tr>
                 </div>
                 </thead>
                 <tbody>
                 {% for competition in competitions %}
                     <tr style="background-color: white">
-                        {#<td><a href="{{ path('competition_show', { 'id': competition.id }) }}">{{ competition.id }}</a></td>#}
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <td>
+                                <a href="{{ path('competition_show', { 'id': competition.id }) }}">{{ competition.id }}</a>
+                            </td>
+                        {% endif %}
                         <td>{{ competition.date | date('d-M-y') }}</td>
                         <td>{{ competition.lieu }}</td>
                         <td>{{ competition.departement }}</td>
@@ -46,15 +54,22 @@
                                         <a href="{{ path('inscrit_new', { 'id': competition.id }) }}">S'incrire à la
                                             compétition</a>
                                     </li>
-                                    {% if is_granted('ROLE_GERANT') %}
+                                    {#<li>#}
+                                        {#<a href="{{ path('inscrit_liste') }}">Voir la liste</a>#}
+                                    {#</li>#}
+                                </ul>
+                            </td>
+                            <td>
+                                {% if is_granted('ROLE_GERANT') %}
+                                    <ul>
                                         <li>
                                             <a href="{{ path('competition_show', { 'id': competition.id }) }}">Montrer</a>
                                         </li>
                                         <li>
                                             <a href="{{ path('competition_edit', { 'id': competition.id }) }}">Modifier</a>
                                         </li>
-                                    {% endif %}
-                                </ul>
+                                    </ul>
+                                {% endif %}
                             </td>
                         {% endif %}
                     </tr>
