@@ -4,6 +4,7 @@ namespace OCUserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * User
@@ -66,7 +67,7 @@ class User implements UserInterface
 
     /**
      * @var string
-     *
+     * @Assert\Date
      * @ORM\Column(name="dateNaissance", type="date")
      */
     private $dateNaissance;
@@ -136,7 +137,12 @@ class User implements UserInterface
 
     /**
      * @var string
-     *
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 3,
+     *      minMessage = "Le numéro de dossard ne fait pas la taille minimum, la limite minimale est de {{ limit }} caractères",
+     *      maxMessage = "Le numéro de dossard fait la taille mawimum, la limite maximale est de {{ limit }} caractères"
+     * )
      * @ORM\Column(name="numDossard", type="integer")
      */
     private $numDossard;
