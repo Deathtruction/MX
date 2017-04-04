@@ -8,10 +8,12 @@
                 <h1 class="titreG">Profil Membre</h1>
                 <table style="background-color:white">
                     <tbody>
-                    {#<tr>#}
-                    {#<th>Id</th>#}
-                    {#<td>{{ user.id }}</td>#}
-                    {#</tr>#}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ user.id }}</td>
+                        </tr>
+                    {% endif %}
                     <tr>
                         <th>Pseudo</th>
                         <td>{{ user.username }}</td>
@@ -21,14 +23,14 @@
                         <td>{{ user.password }}</td>
                     </tr>
                     {% if is_granted('ROLE_ADMIN') %}
-                    <tr>
-                        <th>Salt</th>
-                        <td>{{ user.salt }}</td>
-                    </tr>
-                    <tr>
-                        <th>Roles</th>
-                        <td>{% if user.roles %}{{ user.roles|join(', ') }}{% endif %}</td>
-                    </tr>
+                        <tr>
+                            <th>Salt</th>
+                            <td>{{ user.salt }}</td>
+                        </tr>
+                        <tr>
+                            <th>Roles</th>
+                            <td>{% if user.roles %}{{ user.roles|join(', ') }}{% endif %}</td>
+                        </tr>
                     {% endif %}
                     <tr>
                         <th>Nom</th>
@@ -89,7 +91,7 @@
                 <ul>
                     {% if is_granted('ROLE_ADMIN') %}
                         <li>
-                            <a href="{{ path('user_index') }}" class="bouton-relief">Retour à la liste</a>
+                            <a href="{{ path('user_index') }}" class="bouton-relief">Voir la liste</a>
                         </li><br>
                     {% endif %}
                     <li>

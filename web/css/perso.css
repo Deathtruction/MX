@@ -20,6 +20,11 @@ th {
     border: 3px solid #DEDEDE;
 }
 
+.new {
+    margin: 40px;
+    border: 1px solid #DEDEDE;
+}
+
 .new-user {
     cursor: auto;
     margin: 50px;

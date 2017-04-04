@@ -17,8 +17,8 @@ class UserType extends AbstractType
         $builder
             ->add('username')
             ->add('password')
-            ->add('salt')
-            ->add('roles')
+//            ->add('salt')
+//            ->add('roles')
             ->add('nom')
             ->add('prenom')
             ->add('dateNaissance', DateType::class, array(
