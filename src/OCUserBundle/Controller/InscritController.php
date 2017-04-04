@@ -4,6 +4,7 @@ namespace OCUserBundle\Controller;
 
 use OCUserBundle\Entity\Competition;
 use OCUserBundle\Entity\Inscrit;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -69,6 +70,8 @@ class InscritController extends Controller
 
     /**
      * Finds and displays a inscrit entity.
+     *
+     * @Security("has_role('ROLE_GERANT')")
      *
      * @Route("/{id}", name="inscrit_show")
      * @Method("GET")
@@ -144,4 +147,29 @@ class InscritController extends Controller
             ->setMethod('DELETE')
             ->getForm();
     }
+
+//    /**
+//     * @Route("/liste", name="inscrit_liste")
+//     */
+//    public function listeAction(Inscrit $inscrit){
+//
+//        $competition = new Competition();
+//        $competition->getClub();
+//
+//        $inscrit = new Inscrit();
+//        $inscrit->getCategorie();
+//
+//        $inscrit->setCompetition($competition);
+//
+//        $em = $this->getDoctrine()->getManager();
+//        $em->persist($competition);
+//        $em->persist($inscrit);
+//        $em->flush();
+//
+//        return $this->render('inscrit/liste.html.twig', array(
+//            'inscrit' => $inscrit->getId(),
+//            'competition' => $competition->getId()
+//        ));
+//
+//    }
 }

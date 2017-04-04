@@ -29,6 +29,11 @@ class Categorie
     private $nom;
 
     /**
+     * @ORM\ManyToOne(targetEntity="OCUserBundle\Entity\Competition", fetch="EAGER")
+     */
+    private $competition;
+
+    /**
      * Get id
      *
      * @return int
@@ -61,5 +66,22 @@ class Categorie
     {
         return $this->nom;
     }
+
+    /**
+     * @return \OCUserBundle\Entity\Competition
+     */
+    public function getCompetition()
+    {
+        return $this->competition;
+    }
+
+    /**
+     * @param \OCUserBundle\Entity\Competition $competition
+     */
+    public function setCompetition($competition)
+    {
+        $this->competition = $competition;
+    }
+
 }
 

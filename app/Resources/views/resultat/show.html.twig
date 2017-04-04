@@ -5,13 +5,12 @@
         <div class="col-md-4">
             <div class="new-resultat" style="background-color: #e6e6e6">
                 <h1 class="titreG">Resultat</h1>
-
                 <table style="background-color: white">
                     <tbody>
-                    {#<tr>#}
-                    {#<th>Id</th>#}
-                    {#<td>{{ resultat.id }}</td>#}
-                    {#</tr>#}
+                    <tr>
+                    <th>Id</th>
+                    <td>{{ resultat.id }}</td>
+                    </tr>
                     <tr>
                         <th>Position</th>
                         <td>{{ resultat.position }}</td>
@@ -38,7 +37,6 @@
                     </tr>
                     </tbody>
                 </table>
-
                 <ul>
                     <li>
                         <a href="{{ path('resultat_edit', { 'id': resultat.id }) }}" class="bouton-relief">Modifier</a>

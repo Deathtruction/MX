@@ -141,7 +141,10 @@ class User implements UserInterface
      */
     private $numDossard;
 
-
+    /**
+     * @ORM\ManyToOne(targetEntity="OCUserBundle\Entity\Competition", fetch="EAGER")
+     */
+    private $competition;
 
     /**
      * Get id
@@ -558,6 +561,22 @@ class User implements UserInterface
     public function getNumDossard()
     {
         return $this->numDossard;
+    }
+
+    /**
+     * @return \OCUserBundle\Entity\Competition
+     */
+    public function getCompetition()
+    {
+        return $this->competition;
+    }
+
+    /**
+     * @param \OCUserBundle\Entity\Competition $competition
+     */
+    public function setCompetition($competition)
+    {
+        $this->competition = $competition;
     }
 
     /**

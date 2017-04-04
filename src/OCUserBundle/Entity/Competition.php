@@ -2,6 +2,7 @@
 
 namespace OCUserBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -91,6 +92,35 @@ class Competition
      */
     private $nbParticipants;
 
+    /**
+     * @ORM\OneToMany(targetEntity="OCUserBundle\Entity\User", mappedBy="competition")
+     */
+    private $users;
+
+    public function _construct()
+    {
+        $this->users = new ArrayCollection();
+    }
+
+    /**
+     * @ORM\OneToMany(targetEntity="OCUserBundle\Entity\Inscrit", mappedBy="competition")
+     */
+    private $inscrits;
+
+    public function _constructs()
+    {
+        $this->inscrits = new ArrayCollection();
+    }
+
+    /**
+     * @ORM\OneToMany(targetEntity="OCUserBundle\Entity\Categorie", mappedBy="competition")
+     */
+    private $categories;
+
+    public function _constructe()
+    {
+        $this->categories = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -341,5 +371,54 @@ class Competition
     {
         return $this->nbParticipants;
     }
+
+    /**
+     * @return \OCUserBundle\Entity\User
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    /**
+     * @param \OCUserBundle\Entity\User $users
+     */
+    public function setUsers($users)
+    {
+        $this->users = $users;
+    }
+
+    /**
+     * @return \OCUserBundle\Entity\Inscrit
+     */
+    public function getInscrits()
+    {
+        return $this->inscrits;
+    }
+
+    /**
+     * @param \OCUserBundle\Entity\Inscrit $inscrits
+     */
+    public function setInscrits($inscrits)
+    {
+        $this->inscrits = $inscrits;
+    }
+
+    /**
+     * @return \OCUserBundle\Entity\Categorie
+     */
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+
+    /**
+     * @param \OCUserBundle\Entity\Categorie $categories
+     */
+    public function setCategories($categories)
+    {
+        $this->categories = $categories;
+    }
+
 }
 

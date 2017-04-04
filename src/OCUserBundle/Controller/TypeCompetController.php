@@ -3,6 +3,7 @@
 namespace OCUserBundle\Controller;
 
 use OCUserBundle\Entity\TypeCompet;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -16,6 +17,8 @@ class TypeCompetController extends Controller
 {
     /**
      * Lists all typeCompet entities.
+     *
+     * @Security("has_role('ROLE_GERANT')")
      *
      * @Route("/", name="typecompet_index")
      * @Method("GET")
@@ -34,6 +37,8 @@ class TypeCompetController extends Controller
     /**
      * Creates a new typeCompet entity.
      *
+     * @Security("has_role('ROLE_GERANT')")
+     *
      * @Route("/new", name="typecompet_new")
      * @Method({"GET", "POST"})
      */
@@ -46,7 +51,7 @@ class TypeCompetController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($typeCompet);
-            $em->flush($typeCompet);
+            $em->flush();
 
             return $this->redirectToRoute('typecompet_show', array('id' => $typeCompet->getId()));
         }
@@ -59,6 +64,8 @@ class TypeCompetController extends Controller
 
     /**
      * Finds and displays a typeCompet entity.
+     *
+     * @Security("has_role('ROLE_GERANT')")
      *
      * @Route("/{id}", name="typecompet_show")
      * @Method("GET")
@@ -75,6 +82,8 @@ class TypeCompetController extends Controller
 
     /**
      * Displays a form to edit an existing typeCompet entity.
+     *
+     * @Security("has_role('ROLE_GERANT')")
      *
      * @Route("/{id}/edit", name="typecompet_edit")
      * @Method({"GET", "POST"})
@@ -112,7 +121,7 @@ class TypeCompetController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($typeCompet);
-            $em->flush($typeCompet);
+            $em->flush();
         }
 
         return $this->redirectToRoute('typecompet_index');

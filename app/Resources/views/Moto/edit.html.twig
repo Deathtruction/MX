@@ -2,28 +2,30 @@
 
 {% block body %}
     <div class="row">
-        <div class="col-lg-2" style="background-color: #e6e6e6">
-            <h1 class="titreG">Modifier Moto</h1>
-
-            {{ form_start(edit_form) }}
-            {{ form_widget(edit_form) }}
-            <input type="submit" value="Valider la modification"/>
-            {{ form_end(edit_form) }}
-            <br>
-            <ul>
-                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                    <li><a href="{{ path('user_show', { 'id': app.user.id }) }}" class="bouton-relief">Retour au
-                            Profil</a></li><br>
-                {% endif %}
-                {#<li>#}
-                {#<a href="{{ path('moto_index') }}">Retour à la liste</a>#}
-                {#</li>#}
-                {#<li>#}
-                {#{{ form_start(delete_form) }}#}
-                {#<input type="submit" value="Supprimer">#}
-                {#{{ form_end(delete_form) }}#}
-                {#</li>#}
-            </ul>
+        <div class="col-lg-4">
+            <div class="new-user" style="background-color: #e6e6e6">
+                <h1 class="titreG">Modifier Moto</h1>
+                {{ form_start(edit_form) }}
+                {{ form_widget(edit_form) }}<br>
+                <input type="submit" value="Valider la modification"/>
+                {{ form_end(edit_form) }}<br>
+                <ul>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <li><a href="{{ path('user_show', { 'id': app.user.id }) }}" class="bouton-relief">Retour au
+                                Profil</a></li><br>
+                    {% endif %}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li>
+                            <a href="{{ path('moto_index') }}">Retour à la liste</a>
+                        </li>
+                        <li>
+                            {{ form_start(delete_form) }}
+                            <input type="submit" value="Supprimer">
+                            {{ form_end(delete_form) }}
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
         </div>
     </div>
 {% endblock %}

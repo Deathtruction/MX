@@ -1,12 +1,10 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
     <div class="row">
         <div class="col-lg-4">
             <div style="background-color: #e6e6e6" class="new-user">
                 <h1 class="titreG">Categorie</h1>
-
                 <table style="background-color:white">
                     <tbody>
                     <tr>
@@ -19,14 +17,16 @@
                     </tr>
                     </tbody>
                 </table>
-
                 <ul>
                     <li>
                         <a href="{{ path('categorie_index') }}" class="bouton-relief">Retour à la liste</a>
-                    </li><br>
+                    </li>
+                    <br>
                     <li>
-                        <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}" class="bouton-relief">Modifier</a>
-                    </li><br>
+                        <a href="{{ path('categorie_edit', { 'id': categorie.id }) }}"
+                           class="bouton-relief">Modifier</a>
+                    </li>
+                    <br>
                     <li>
                         {{ form_start(delete_form) }}
                         <input type="submit" value="Supprimer">

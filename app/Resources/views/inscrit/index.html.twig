@@ -2,36 +2,38 @@
 
 {% block body %}
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-8">
             <div class="new-user" style="background-color: #e6e6e6">
                 <h1 style="text-align: center" class="titreG">Liste des Inscrits</h1>
                 <table style="background-color: white">
                     <thead>
                     <tr style="background-color: white">
                         {% if is_granted('ROLE_ADMIN') %}
-                        <th>Id</th>
+                            <th>Id</th>
                         {% endif %}
                         <th>Numéro de dossard</th>
                         <th>Nom</th>
                         <th>Prénom</th>
                         <th>Club</th>
                         <th>Catégorie</th>
-                        {% if is_granted('ROLE_ADMIN') %}
-                        <th>Actions</th>
+                        <th>Lieu de la compétition</th>
+                        {% if is_granted('ROLE_GERANT') %}
+                            <th>Actions</th>
                         {% endif %}
                     </tr>
                     </thead>
                     <tbody>
                     {% for inscrit in inscrits %}
                         <tr>
-                            {% if is_granted('ROLE_GERANT') %}
-                            <td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <td><a href="{{ path('inscrit_show', { 'id': inscrit.id }) }}">{{ inscrit.id }}</a></td>
                             {% endif %}
                             <td>{{ inscrit.user.numDossard }}</td>
                             <td>{{ inscrit.user.nom }}</td>
                             <td>{{ inscrit.user.prenom }}</td>
                             <td>{{ inscrit.user.club }}</td>
                             <td>{{ inscrit.categorie.nom }}</td>
+                            <td>{{ inscrit.competition.club }}</td>
                             {% if is_granted('ROLE_GERANT') %}
                                 <td>
                                     <ul>
@@ -49,12 +51,15 @@
                     </tbody>
                 </table>
                 {#{% if is_granted('ROLE_ADMIN') %}#}
-                    {#<ul>#}
-                        {#<li>#}
-                            {#<a href="{{ path('inscrit_new', { 'id': inscrit.id }) }}" class="bouton-relief">Créer une nouvelle inscription</a>#}
-                        {#</li>#}
-                    {#</ul>#}
-                    {#<br>#}
+                    {#<td>#}
+                        {#<ul>#}
+                            {#<li>#}
+                                {#<a href="{{ path('inscrit_new') }}" class="bouton-relief">Créer#}
+                                    {#une nouvelle inscription</a>#}
+                            {#</li>#}
+                        {#</ul>#}
+                        {#<br>#}
+                    {#</td>#}
                 {#{% endif %}#}
             </div>
         </div>
